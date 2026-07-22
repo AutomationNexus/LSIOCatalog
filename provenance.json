@@ -1,7 +1,7 @@
 {
   "catalog_id": "lsio",
   "cs_renderer_pinned_ref": "51992934f69bdfdcebc3101647b2537f9f69a34d",
-  "generated_at": "2026-07-22T19:04:04Z",
+  "generated_at": "2026-07-22T19:10:07Z",
   "generator": "lsio_catalog_gen 0.0.0",
   "services": {
     "adguardhome-sync": {

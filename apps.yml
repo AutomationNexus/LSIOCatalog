@@ -1,0 +1,16 @@
+# Configurable list of LinuxServer.io images the generator converts into the `lsio`
+# catalog. This is the WORKING FOUNDATION / proof set; the scheduled CI expands
+# coverage over time. Each entry is an LSIO image name — the generator reads
+# https://github.com/linuxserver/docker-<name>/readme-vars.yml.
+#
+# Add an app by appending its name. Apps whose readme-vars use semantics CS cannot
+# faithfully represent (host networking, privileged, device passthrough, added
+# capabilities, ambiguous/absent primary port) are rejected automatically and recorded
+# in the generated catalog/rejected.json — adding one is harmless.
+apps:
+  - sonarr
+  - radarr
+  - bazarr
+  - prowlarr
+  - lidarr
+  - plex

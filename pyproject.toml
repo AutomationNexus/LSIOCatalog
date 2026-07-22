@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lsio-catalog-gen"
+description = "Generator that converts LinuxServer.io image metadata into a CognitiveSystems git catalog (id: lsio)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Tahasanul Abraham" }]
+keywords = ["linuxserver", "lsio", "docker", "catalog", "cognitivesystems"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Environment :: Console",
+    "Topic :: System :: Installation/Setup",
+]
+version = "0.0.0"
+# Only the standard library + PyYAML are needed to CONVERT. Validation additionally
+# requires a pinned `cognitivesystems` renderer (see [project.optional-dependencies]
+# and README "Validation"); it is deliberately NOT a hard runtime dependency so the
+# pure converter/unit tests never need the private CS package installed.
+dependencies = [
+    "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+# The pinned CS renderer used by `validate`. Pin to an immutable ref, never a moving
+# branch. See README "Validation" + the cross-repo CI-auth decision TODO — installing
+# this from the PRIVATE CognitiveSystems repo in CI needs a CI-Bot token.
+#   pip install "cognitivesystems @ git+https://github.com/AutomationNexus/CognitiveSystems@<REF>"
+cs-validate = []
+
+[project.scripts]
+lsio-catalog-gen = "lsio_catalog_gen.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/AutomationNexus/LSIOCatalog"
+Source = "https://github.com/AutomationNexus/LSIOCatalog"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lsio_catalog_gen"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py39"
+
+[tool.ruff.lint]
+# Mirror CognitiveSystems' ruff conventions: default rules (E4/E7/E9 + F) plus
+# pydocstyle (D) with the NumPy convention.
+extend-select = ["D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
+# Tests document themselves with one-line summaries by convention; don't gate them.
+"tests/**" = ["D"]

@@ -158,7 +158,7 @@ renderer** before it is written/tagged — this repo runs the *same* functions C
   `dry_run_all`.
 
 **Pinned CS ref:** `lsio_catalog_gen.CS_PINNED_REF`
-(`6042815cff98895bc95cb69f5e802e8f37ea4516`) — an immutable commit, never a moving
+(`51992934f69bdfdcebc3101647b2537f9f69a34d`) — an immutable commit, never a moving
 branch. Update it deliberately when re-validating against a newer CS renderer.
 
 ### Cross-repo CI-auth — SETTLED: CI-Bot GitHub App

@@ -18,7 +18,7 @@ __version__ = "0.0.0"
 # immutable commit, never a moving branch. Kept here (single source of truth) so the
 # generator can stamp it into provenance and the CI workflow can install the matching
 # renderer. See README "Validation" and the cross-repo CI-auth decision.
-CS_PINNED_REF = "6042815cff98895bc95cb69f5e802e8f37ea4516"
+CS_PINNED_REF = "51992934f69bdfdcebc3101647b2537f9f69a34d"
 
 # The one, exact catalog id CS validates the generated manifest against
 # (``catalog_fetch.validate_manifest`` requires ``manifest["id"] == source_id``).

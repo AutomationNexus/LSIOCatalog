@@ -161,20 +161,31 @@ renderer** before it is written/tagged — this repo runs the *same* functions C
 (`6042815cff98895bc95cb69f5e802e8f37ea4516`) — an immutable commit, never a moving
 branch. Update it deliberately when re-validating against a newer CS renderer.
 
-### Cross-repo CI-auth — OPEN DECISION (platform-engineer / org-root)
+### Cross-repo CI-auth — SETTLED: CI-Bot GitHub App
 
 LSIOCatalog is **public**; CognitiveSystems is **private**. CI installing the pinned CS
-renderer from git therefore needs read access to the private repo. The org standard is a
-short-lived **CI-Bot GitHub App** token (never `GITHUB_TOKEN` / a PAT):
+renderer from git therefore needs read access to the private repo. Per org policy
+(workspace `CLAUDE.md`), privileged cross-repo automation mints a short-lived **CI-Bot
+GitHub App** token via `actions/create-github-app-token@v1` — **never `GITHUB_TOKEN`
+and never a PAT**. `.github/workflows/generate.yml` implements exactly this: it mints a
+token scoped to **read `CognitiveSystems` only**, then:
 
 ```
-pip install "cognitivesystems @ git+https://x-access-token:${CI_BOT_TOKEN}@github.com/AutomationNexus/CognitiveSystems@<CS_PINNED_REF>"
+pip install "cognitivesystems @ git+https://x-access-token:${APP_TOKEN}@github.com/AutomationNexus/CognitiveSystems@<CS_PINNED_REF>"
 ```
 
-`.github/workflows/generate.yml` is wired for this with the App-token step ready to
-uncomment once the `CI_BOT_APP_ID` / `CI_BOT_APP_PRIVATE_KEY` secrets are provisioned.
-**Alternative:** if CS is ever published to PyPI, install `cognitivesystems==<pinned>`
-and drop the token. *This is a platform-engineer / org-root decision — not made here.*
+The same-repo `catalog`-branch/tag publish keeps using the ambient `GITHUB_TOKEN` (the
+cross-repo rule is about reaching the private CS repo; publishing here is same-repo).
+
+**One remaining prerequisite** (an org-root/admin action, done separately, before the
+cron can run):
+
+1. install the **CI-Bot GitHub App** on `AutomationNexus` with **read** access to the
+   `CognitiveSystems` repo, and
+2. provision the `CI_BOT_APP_ID` and `CI_BOT_APP_PRIVATE_KEY` secrets on **this** repo.
+
+*Alternative (a separate platform-engineer decision, not blocking):* if CS is ever
+published to PyPI, install `cognitivesystems==<pinned>` and drop the token entirely.
 
 For **local** development the pinned renderer is installed from the sibling checkout
 (`pip install -e ../CognitiveSystems@<ref>`), which is how the committed `catalog/`
@@ -194,8 +205,11 @@ fixtures under `tests/fixtures/readme-vars/`.
 
 ## Open decisions
 
-- **CI auth** for installing the private CS renderer (CI-Bot App token vs. a future PyPI
-  package) — platform-engineer / org-root.
+- **CI-Bot App provisioning** (not a design decision — an admin action): install the
+  CI-Bot GitHub App with `CognitiveSystems` read access and provision
+  `CI_BOT_APP_ID` / `CI_BOT_APP_PRIVATE_KEY` on this repo, so the cron can validate.
+  The auth *mechanism* is settled (CI-Bot App token) — see
+  [Cross-repo CI-auth](#cross-repo-ci-auth--settled-ci-bot-github-app).
 - Whether the scheduled generator should become a **shared reusable workflow** in
   `automationnexus/.github` rather than this standalone workflow — platform-engineer.
 - Branch-protection / publish model for the `catalog` branch + tags on this new public

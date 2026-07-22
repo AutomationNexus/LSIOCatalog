@@ -261,7 +261,10 @@ def _volumes(rv: dict, display_name: str) -> list[str]:
     Raises
     ------
     RejectionError
-        If a required volume path is not a plain absolute container path.
+        If a required volume path is not a plain absolute container path, or if ANY
+        volume path (required or optional) contains a ``..`` traversal segment —
+        ``readme-vars.yml`` is untrusted third-party content, so a traversal segment
+        rejects the whole app rather than being silently dropped.
     """
     required = rv.get("param_volumes") or []
     optional = rv.get("opt_param_volumes") or []
@@ -276,6 +279,11 @@ def _volumes(rv: dict, display_name: str) -> list[str]:
             if is_required:
                 raise RejectionError(f"required volume path {path!r} is not representable")
             return
+        # Reject path traversal in untrusted metadata. This fires for required AND
+        # optional volumes: a '..' segment is a red flag for the whole definition, so
+        # the app is rejected outright rather than the one volume being dropped.
+        if any(seg == ".." for seg in path.split("/")):
+            raise RejectionError(f"volume path {path!r} contains a '..' traversal segment")
         path = path.rstrip("/") or "/config"
         if path in seen:
             return

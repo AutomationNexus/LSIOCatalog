@@ -35,34 +35,37 @@ jobs:
         with:
           python-version: "3.12"
 
-      # ── CROSS-REPO AUTH WRINKLE (OPEN DECISION — see README "Validation") ──────────
+      # ── CROSS-REPO AUTH (SETTLED: CI-Bot GitHub App) ──────────────────────────────
       # LSIOCatalog is PUBLIC; CognitiveSystems is PRIVATE. Installing the pinned CS
-      # renderer from git therefore needs a credential with read access to the private
-      # repo. The org standard for privileged cross-repo automation is a short-lived
-      # CI-Bot GitHub App token (never GITHUB_TOKEN / a PAT). Provision the CI-Bot App
-      # id + private key as repo/org secrets, then uncomment:
+      # renderer from git needs read access to the private repo. Per org policy
+      # (workspace CLAUDE.md), privileged cross-repo automation mints a short-lived
+      # CI-Bot GitHub App token via actions/create-github-app-token@v1 — never
+      # GITHUB_TOKEN and never a PAT. The token is scoped to READ CognitiveSystems only.
       #
-      # - uses: actions/create-github-app-token@v1
-      #   id: cibot
-      #   with:
-      #     app-id: ${{ secrets.CI_BOT_APP_ID }}
-      #     private-key: ${{ secrets.CI_BOT_APP_PRIVATE_KEY }}
-      #     owner: AutomationNexus
-      #     repositories: CognitiveSystems
-      #
-      # Alternative (platform-engineer decision): if CS is ever published to PyPI,
-      # install `cognitivesystems==<pinned>` from PyPI and drop the token entirely.
+      # REMAINING PREREQUISITE (org-root/admin, done separately, before the cron can run):
+      #   1. install the CI-Bot GitHub App on AutomationNexus with read access to the
+      #      CognitiveSystems repo, and
+      #   2. provision the CI_BOT_APP_ID and CI_BOT_APP_PRIVATE_KEY secrets on THIS repo.
+      - name: Mint CI-Bot App token (read CognitiveSystems)
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.CI_BOT_APP_ID }}
+          private-key: ${{ secrets.CI_BOT_APP_PRIVATE_KEY }}
+          owner: AutomationNexus
+          repositories: CognitiveSystems
+
       - name: Install generator + pinned CS renderer
         env:
-          # TODO(platform-engineer): replace with the CI-Bot App token minted above.
-          CS_INSTALL_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+          # Short-lived CI-Bot GitHub App token minted above — NOT a PAT / GITHUB_TOKEN.
+          CS_INSTALL_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           set -euo pipefail
           python -m pip install -U pip
           python -m pip install -e .
           CS_REF="$(python -c 'import lsio_catalog_gen as m; print(m.CS_PINNED_REF)')"
           if [ -z "${CS_INSTALL_TOKEN:-}" ]; then
-            echo "::error::CS renderer install token not configured — cannot validate. See README 'Validation' / the CI-auth open decision."
+            echo "::error::CI-Bot App token empty — is the CI-Bot App installed with CognitiveSystems read access and are CI_BOT_APP_ID / CI_BOT_APP_PRIVATE_KEY provisioned? See README 'Validation'."
             exit 1
           fi
           python -m pip install \

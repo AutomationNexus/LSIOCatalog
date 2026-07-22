@@ -75,3 +75,18 @@ def test_multiport_with_single_web_port_is_accepted():
 def test_unsafe_project_slug_rejected():
     with pytest.raises(RejectionError, match="slug"):
         convert(_base(project_name="Bad Name!"), app="Bad Name!")
+
+
+def test_required_volume_path_traversal_rejected():
+    with pytest.raises(RejectionError, match=r"traversal"):
+        convert(_base(param_volumes=[{"vol_path": "/../../etc", "desc": "x"}]), app="app")
+
+
+def test_optional_volume_path_traversal_rejects_whole_app():
+    """An untrusted '..' in an OPTIONAL data mount rejects the whole app, not just the mount."""
+    unsafe = _base(
+        param_volumes=[{"vol_path": "/config", "desc": "config"}],
+        opt_param_volumes=[{"vol_path": "/data/../../root", "desc": "sneaky"}],
+    )
+    with pytest.raises(RejectionError, match=r"traversal"):
+        convert(unsafe, app="app")

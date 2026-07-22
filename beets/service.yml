@@ -1,0 +1,23 @@
+display_name: Beets
+subdomain: beets
+routing: traefik
+auto_update_default: true
+containers:
+  beets:
+    image_url: lscr.io/linuxserver/beets
+    image_tag: latest
+    ports:
+    - 8337:8337
+    volumes:
+    - ${CONFIG_ROOT}/Beets/config:/config
+    - ${STORAGE_ROOT}/music:/music
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '8337'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

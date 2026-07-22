@@ -1,0 +1,23 @@
+display_name: Sickgear
+subdomain: sickgear
+routing: traefik
+auto_update_default: true
+containers:
+  sickgear:
+    image_url: lscr.io/linuxserver/sickgear
+    image_tag: latest
+    ports:
+    - 8081:8081
+    volumes:
+    - ${CONFIG_ROOT}/Sickgear/config:/config
+    - ${STORAGE_ROOT}/tv:/tv
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '8081'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

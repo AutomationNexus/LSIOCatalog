@@ -1,0 +1,21 @@
+display_name: Raneto
+subdomain: raneto
+routing: traefik
+auto_update_default: true
+containers:
+  raneto:
+    image_url: lscr.io/linuxserver/raneto
+    image_tag: latest
+    ports:
+    - 3000:3000
+    volumes:
+    - ${CONFIG_ROOT}/Raneto/config:/config
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

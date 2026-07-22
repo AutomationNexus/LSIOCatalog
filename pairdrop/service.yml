@@ -1,0 +1,21 @@
+display_name: Pairdrop
+subdomain: pairdrop
+routing: traefik
+auto_update_default: true
+containers:
+  pairdrop:
+    image_url: lscr.io/linuxserver/pairdrop
+    image_tag: latest
+    ports:
+    - 3000:3000
+    volumes:
+    - ${CONFIG_ROOT}/Pairdrop/config:/config
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

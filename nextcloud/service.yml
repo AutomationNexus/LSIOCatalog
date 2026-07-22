@@ -1,0 +1,22 @@
+display_name: Nextcloud
+subdomain: nextcloud
+routing: traefik
+auto_update_default: true
+containers:
+  nextcloud:
+    image_url: lscr.io/linuxserver/nextcloud
+    image_tag: latest
+    ports:
+    - 443:443
+    volumes:
+    - ${CONFIG_ROOT}/Nextcloud/config:/config
+    - ${STORAGE_ROOT}/data:/data
+    service_port: '443'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

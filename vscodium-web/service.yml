@@ -1,0 +1,21 @@
+display_name: Vscodium-web
+subdomain: vscodium-web
+routing: traefik
+auto_update_default: true
+containers:
+  vscodium-web:
+    image_url: lscr.io/linuxserver/vscodium-web
+    image_tag: latest
+    ports:
+    - 8000:8000
+    volumes:
+    - ${CONFIG_ROOT}/Vscodium-web/config:/config
+    service_port: '8000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

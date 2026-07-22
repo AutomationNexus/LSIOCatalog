@@ -1,0 +1,22 @@
+display_name: Kavita
+subdomain: kavita
+routing: traefik
+auto_update_default: true
+containers:
+  kavita:
+    image_url: lscr.io/linuxserver/kavita
+    image_tag: latest
+    ports:
+    - 5000:5000
+    volumes:
+    - ${CONFIG_ROOT}/Kavita/config:/config
+    - ${STORAGE_ROOT}/data:/data
+    service_port: '5000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

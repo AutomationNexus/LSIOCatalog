@@ -1,0 +1,22 @@
+display_name: Tvheadend
+subdomain: tvheadend
+routing: traefik
+auto_update_default: true
+containers:
+  tvheadend:
+    image_url: lscr.io/linuxserver/tvheadend
+    image_tag: latest
+    ports:
+    - 9981:9981
+    volumes:
+    - ${CONFIG_ROOT}/Tvheadend/config:/config
+    - ${STORAGE_ROOT}/recordings:/recordings
+    service_port: '9981'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

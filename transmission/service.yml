@@ -1,0 +1,23 @@
+display_name: Transmission
+subdomain: transmission
+routing: traefik
+auto_update_default: true
+containers:
+  transmission:
+    image_url: lscr.io/linuxserver/transmission
+    image_tag: latest
+    ports:
+    - 9091:9091
+    volumes:
+    - ${CONFIG_ROOT}/Transmission/config:/config
+    - ${STORAGE_ROOT}/downloads:/downloads
+    - ${STORAGE_ROOT}/watch:/watch
+    service_port: '9091'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

@@ -1,0 +1,23 @@
+display_name: Lazylibrarian
+subdomain: lazylibrarian
+routing: traefik
+auto_update_default: true
+containers:
+  lazylibrarian:
+    image_url: lscr.io/linuxserver/lazylibrarian
+    image_tag: latest
+    ports:
+    - 5299:5299
+    volumes:
+    - ${CONFIG_ROOT}/Lazylibrarian/config:/config
+    - ${STORAGE_ROOT}/downloads:/downloads
+    - ${STORAGE_ROOT}/books:/books
+    service_port: '5299'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

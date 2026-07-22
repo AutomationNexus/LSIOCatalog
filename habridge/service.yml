@@ -1,0 +1,21 @@
+display_name: Habridge
+subdomain: habridge
+routing: traefik
+auto_update_default: true
+containers:
+  habridge:
+    image_url: lscr.io/linuxserver/habridge
+    image_tag: latest
+    ports:
+    - 8080:8080
+    volumes:
+    - ${CONFIG_ROOT}/Habridge/config:/config
+    service_port: '8080'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

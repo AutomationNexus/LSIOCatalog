@@ -1,0 +1,21 @@
+display_name: Znc
+subdomain: znc
+routing: traefik
+auto_update_default: true
+containers:
+  znc:
+    image_url: lscr.io/linuxserver/znc
+    image_tag: latest
+    ports:
+    - 6501:6501
+    volumes:
+    - ${CONFIG_ROOT}/Znc/config:/config
+    service_port: '6501'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

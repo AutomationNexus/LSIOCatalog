@@ -1,0 +1,21 @@
+display_name: Code-server
+subdomain: code-server
+routing: traefik
+auto_update_default: true
+containers:
+  code-server:
+    image_url: lscr.io/linuxserver/code-server
+    image_tag: latest
+    ports:
+    - 8443:8443
+    volumes:
+    - ${CONFIG_ROOT}/Code-server/config:/config
+    service_port: '8443'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

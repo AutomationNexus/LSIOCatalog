@@ -1,0 +1,22 @@
+display_name: Mariadb
+subdomain: mariadb
+routing: traefik
+auto_update_default: true
+containers:
+  mariadb:
+    image_url: lscr.io/linuxserver/mariadb
+    image_tag: latest
+    ports:
+    - 3306:3306
+    volumes:
+    - ${CONFIG_ROOT}/Mariadb/config:/config
+    service_port: '3306'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      MYSQL_ROOT_PASSWORD: ROOT_ACCESS_PASSWORD
+variants_supported:
+- web
+- websecure
+- wildcard

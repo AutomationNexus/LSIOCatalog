@@ -1,0 +1,23 @@
+display_name: Syncthing
+subdomain: syncthing
+routing: traefik
+auto_update_default: true
+containers:
+  syncthing:
+    image_url: lscr.io/linuxserver/syncthing
+    image_tag: latest
+    ports:
+    - 8384:8384
+    volumes:
+    - ${CONFIG_ROOT}/Syncthing/config:/config
+    - ${STORAGE_ROOT}/data1:/data1
+    - ${STORAGE_ROOT}/data2:/data2
+    service_port: '8384'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

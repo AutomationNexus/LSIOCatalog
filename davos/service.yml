@@ -1,0 +1,22 @@
+display_name: Davos
+subdomain: davos
+routing: traefik
+auto_update_default: true
+containers:
+  davos:
+    image_url: lscr.io/linuxserver/davos
+    image_tag: latest
+    ports:
+    - 8080:8080
+    volumes:
+    - ${CONFIG_ROOT}/Davos/config:/config
+    - ${STORAGE_ROOT}/download:/download
+    service_port: '8080'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

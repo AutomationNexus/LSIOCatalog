@@ -1,0 +1,22 @@
+display_name: Calibre-web
+subdomain: calibre-web
+routing: traefik
+auto_update_default: true
+containers:
+  calibre-web:
+    image_url: lscr.io/linuxserver/calibre-web
+    image_tag: latest
+    ports:
+    - 8083:8083
+    volumes:
+    - ${CONFIG_ROOT}/Calibre-web/config:/config
+    - ${STORAGE_ROOT}/books:/books
+    service_port: '8083'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

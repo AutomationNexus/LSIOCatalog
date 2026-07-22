@@ -1,0 +1,6 @@
+id: lsio
+format_version: 1
+display_name: LinuxServer.io
+description: Community catalog of LinuxServer.io images, generated from each image's
+  upstream readme-vars.yml and expressed through CognitiveSystems profile placeholders.
+generator: lsio_catalog_gen 0.0.0

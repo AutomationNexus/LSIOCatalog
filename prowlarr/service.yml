@@ -1,0 +1,21 @@
+display_name: Prowlarr
+subdomain: prowlarr
+routing: traefik
+auto_update_default: true
+containers:
+  prowlarr:
+    image_url: lscr.io/linuxserver/prowlarr
+    image_tag: latest
+    ports:
+    - 9696:9696
+    volumes:
+    - ${CONFIG_ROOT}/Prowlarr/config:/config
+    service_port: '9696'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

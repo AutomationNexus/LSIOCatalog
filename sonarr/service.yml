@@ -1,0 +1,23 @@
+display_name: Sonarr
+subdomain: sonarr
+routing: traefik
+auto_update_default: true
+containers:
+  sonarr:
+    image_url: lscr.io/linuxserver/sonarr
+    image_tag: latest
+    ports:
+    - 8989:8989
+    volumes:
+    - ${CONFIG_ROOT}/Sonarr/config:/config
+    - ${STORAGE_ROOT}/tv:/tv
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '8989'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

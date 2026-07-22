@@ -1,0 +1,23 @@
+display_name: Lidarr
+subdomain: lidarr
+routing: traefik
+auto_update_default: true
+containers:
+  lidarr:
+    image_url: lscr.io/linuxserver/lidarr
+    image_tag: latest
+    ports:
+    - 8686:8686
+    volumes:
+    - ${CONFIG_ROOT}/Lidarr/config:/config
+    - ${STORAGE_ROOT}/music:/music
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '8686'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

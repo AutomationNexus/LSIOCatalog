@@ -1,0 +1,21 @@
+display_name: Changedetection.io
+subdomain: changedetection.io
+routing: traefik
+auto_update_default: true
+containers:
+  changedetection.io:
+    image_url: lscr.io/linuxserver/changedetection.io
+    image_tag: latest
+    ports:
+    - 5000:5000
+    volumes:
+    - ${CONFIG_ROOT}/Changedetection.io/config:/config
+    service_port: '5000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

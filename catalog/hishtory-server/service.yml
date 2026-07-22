@@ -1,0 +1,21 @@
+display_name: Hishtory-server
+subdomain: hishtory-server
+routing: traefik
+auto_update_default: true
+containers:
+  hishtory-server:
+    image_url: lscr.io/linuxserver/hishtory-server
+    image_tag: latest
+    ports:
+    - 8080:8080
+    volumes:
+    - ${CONFIG_ROOT}/Hishtory-server/config:/config
+    service_port: '8080'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

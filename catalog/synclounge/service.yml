@@ -1,0 +1,21 @@
+display_name: Synclounge
+subdomain: synclounge
+routing: traefik
+auto_update_default: true
+containers:
+  synclounge:
+    image_url: lscr.io/linuxserver/synclounge
+    image_tag: latest
+    ports:
+    - 8088:8088
+    volumes:
+    - ${CONFIG_ROOT}/Synclounge/config:/config
+    service_port: '8088'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

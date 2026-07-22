@@ -1,0 +1,22 @@
+display_name: Librespeed
+subdomain: librespeed
+routing: traefik
+auto_update_default: true
+containers:
+  librespeed:
+    image_url: lscr.io/linuxserver/librespeed
+    image_tag: latest
+    ports:
+    - 80:80
+    volumes:
+    - ${CONFIG_ROOT}/Librespeed/config:/config
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      PASSWORD: PASSWORD
+variants_supported:
+- web
+- websecure
+- wildcard

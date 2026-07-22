@@ -1,0 +1,21 @@
+display_name: Faster-whisper
+subdomain: faster-whisper
+routing: traefik
+auto_update_default: true
+containers:
+  faster-whisper:
+    image_url: lscr.io/linuxserver/faster-whisper
+    image_tag: latest
+    ports:
+    - 10300:10300
+    volumes:
+    - ${CONFIG_ROOT}/Faster-whisper/config:/config
+    service_port: '10300'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

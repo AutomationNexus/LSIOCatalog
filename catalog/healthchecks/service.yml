@@ -1,0 +1,21 @@
+display_name: Healthchecks
+subdomain: healthchecks
+routing: traefik
+auto_update_default: true
+containers:
+  healthchecks:
+    image_url: lscr.io/linuxserver/healthchecks
+    image_tag: latest
+    ports:
+    - 8000:8000
+    volumes:
+    - ${CONFIG_ROOT}/Healthchecks/config:/config
+    service_port: '8000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

@@ -1,0 +1,23 @@
+display_name: Medusa
+subdomain: medusa
+routing: traefik
+auto_update_default: true
+containers:
+  medusa:
+    image_url: lscr.io/linuxserver/medusa
+    image_tag: latest
+    ports:
+    - 8081:8081
+    volumes:
+    - ${CONFIG_ROOT}/Medusa/config:/config
+    - ${STORAGE_ROOT}/downloads:/downloads
+    - ${STORAGE_ROOT}/tv:/tv
+    service_port: '8081'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

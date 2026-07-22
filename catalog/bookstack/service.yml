@@ -1,0 +1,22 @@
+display_name: Bookstack
+subdomain: bookstack
+routing: traefik
+auto_update_default: true
+containers:
+  bookstack:
+    image_url: lscr.io/linuxserver/bookstack
+    image_tag: latest
+    ports:
+    - 6875:80
+    volumes:
+    - ${CONFIG_ROOT}/Bookstack/config:/config
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      DB_PORT: '3306'
+variants_supported:
+- web
+- websecure
+- wildcard

@@ -1,0 +1,23 @@
+display_name: Mylar3
+subdomain: mylar3
+routing: traefik
+auto_update_default: true
+containers:
+  mylar3:
+    image_url: lscr.io/linuxserver/mylar3
+    image_tag: latest
+    ports:
+    - 8090:8090
+    volumes:
+    - ${CONFIG_ROOT}/Mylar3/config:/config
+    - ${STORAGE_ROOT}/comics:/comics
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '8090'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

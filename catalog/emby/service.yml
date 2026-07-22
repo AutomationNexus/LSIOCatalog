@@ -1,0 +1,24 @@
+display_name: Emby
+subdomain: emby
+routing: traefik
+auto_update_default: true
+containers:
+  emby:
+    image_url: lscr.io/linuxserver/emby
+    image_tag: latest
+    ports:
+    - 8096:8096
+    volumes:
+    - ${CONFIG_ROOT}/Emby/config:/config
+    - ${STORAGE_ROOT}/data/tvshows:/data/tvshows
+    - ${STORAGE_ROOT}/data/movies:/data/movies
+    - ${STORAGE_ROOT}/opt/vc/lib:/opt/vc/lib
+    service_port: '8096'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

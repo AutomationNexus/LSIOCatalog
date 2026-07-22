@@ -1,0 +1,23 @@
+display_name: Resilio-sync
+subdomain: resilio-sync
+routing: traefik
+auto_update_default: true
+containers:
+  resilio-sync:
+    image_url: lscr.io/linuxserver/resilio-sync
+    image_tag: latest
+    ports:
+    - 8888:8888
+    volumes:
+    - ${CONFIG_ROOT}/Resilio-sync/config:/config
+    - ${STORAGE_ROOT}/downloads:/downloads
+    - ${STORAGE_ROOT}/sync:/sync
+    service_port: '8888'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

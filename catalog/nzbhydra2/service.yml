@@ -1,0 +1,22 @@
+display_name: Nzbhydra2
+subdomain: nzbhydra2
+routing: traefik
+auto_update_default: true
+containers:
+  nzbhydra2:
+    image_url: lscr.io/linuxserver/nzbhydra2
+    image_tag: latest
+    ports:
+    - 5076:5076
+    volumes:
+    - ${CONFIG_ROOT}/Nzbhydra2/config:/config
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '5076'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

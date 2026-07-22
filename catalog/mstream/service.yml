@@ -1,0 +1,22 @@
+display_name: Mstream
+subdomain: mstream
+routing: traefik
+auto_update_default: true
+containers:
+  mstream:
+    image_url: lscr.io/linuxserver/mstream
+    image_tag: latest
+    ports:
+    - 3000:3000
+    volumes:
+    - ${CONFIG_ROOT}/Mstream/config:/config
+    - ${STORAGE_ROOT}/music:/music
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

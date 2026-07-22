@@ -1,0 +1,21 @@
+display_name: Netbox
+subdomain: netbox
+routing: traefik
+auto_update_default: true
+containers:
+  netbox:
+    image_url: lscr.io/linuxserver/netbox
+    image_tag: latest
+    ports:
+    - 8000:8000
+    volumes:
+    - ${CONFIG_ROOT}/Netbox/config:/config
+    service_port: '8000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

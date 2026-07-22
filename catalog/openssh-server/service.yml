@@ -1,0 +1,21 @@
+display_name: Openssh-server
+subdomain: openssh-server
+routing: traefik
+auto_update_default: true
+containers:
+  openssh-server:
+    image_url: lscr.io/linuxserver/openssh-server
+    image_tag: latest
+    ports:
+    - 2222:2222
+    volumes:
+    - ${CONFIG_ROOT}/Openssh-server/config:/config
+    service_port: '2222'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

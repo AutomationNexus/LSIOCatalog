@@ -1,0 +1,22 @@
+display_name: Projectsend
+subdomain: projectsend
+routing: traefik
+auto_update_default: true
+containers:
+  projectsend:
+    image_url: lscr.io/linuxserver/projectsend
+    image_tag: latest
+    ports:
+    - 80:80
+    volumes:
+    - ${CONFIG_ROOT}/Projectsend/config:/config
+    - ${STORAGE_ROOT}/data:/data
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

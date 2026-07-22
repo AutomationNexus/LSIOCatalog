@@ -1,0 +1,21 @@
+display_name: Grocy
+subdomain: grocy
+routing: traefik
+auto_update_default: true
+containers:
+  grocy:
+    image_url: lscr.io/linuxserver/grocy
+    image_tag: latest
+    ports:
+    - 9283:80
+    volumes:
+    - ${CONFIG_ROOT}/Grocy/config:/config
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

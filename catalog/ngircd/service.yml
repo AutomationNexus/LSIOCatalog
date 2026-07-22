@@ -1,0 +1,21 @@
+display_name: Ngircd
+subdomain: ngircd
+routing: traefik
+auto_update_default: true
+containers:
+  ngircd:
+    image_url: lscr.io/linuxserver/ngircd
+    image_tag: latest
+    ports:
+    - 6667:6667
+    volumes:
+    - ${CONFIG_ROOT}/Ngircd/config:/config
+    service_port: '6667'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

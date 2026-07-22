@@ -1,0 +1,25 @@
+display_name: Airsonic-advanced
+subdomain: airsonic-advanced
+routing: traefik
+auto_update_default: true
+containers:
+  airsonic-advanced:
+    image_url: lscr.io/linuxserver/airsonic-advanced
+    image_tag: latest
+    ports:
+    - 4040:4040
+    volumes:
+    - ${CONFIG_ROOT}/Airsonic-advanced/config:/config
+    - ${STORAGE_ROOT}/music:/music
+    - ${STORAGE_ROOT}/playlists:/playlists
+    - ${STORAGE_ROOT}/podcasts:/podcasts
+    - ${STORAGE_ROOT}/media:/media
+    service_port: '4040'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

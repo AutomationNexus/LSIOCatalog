@@ -1,0 +1,24 @@
+display_name: Diskover
+subdomain: diskover
+routing: traefik
+auto_update_default: true
+containers:
+  diskover:
+    image_url: lscr.io/linuxserver/diskover
+    image_tag: latest
+    ports:
+    - 80:80
+    volumes:
+    - ${CONFIG_ROOT}/Diskover/config:/config
+    - ${STORAGE_ROOT}/data:/data
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      ES_HOST: elasticsearch
+      ES_PORT: '9200'
+variants_supported:
+- web
+- websecure
+- wildcard

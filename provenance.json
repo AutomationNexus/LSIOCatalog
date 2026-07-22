@@ -1,7 +1,7 @@
 {
   "catalog_id": "lsio",
   "cs_renderer_pinned_ref": "6042815cff98895bc95cb69f5e802e8f37ea4516",
-  "generated_at": "2026-07-22T06:58:28Z",
+  "generated_at": "2026-07-22T07:31:46Z",
   "generator": "lsio_catalog_gen 0.0.0",
   "services": {
     "bazarr": {

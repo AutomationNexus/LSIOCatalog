@@ -1,0 +1,23 @@
+display_name: Bazarr
+subdomain: bazarr
+routing: traefik
+auto_update_default: true
+containers:
+  bazarr:
+    image_url: lscr.io/linuxserver/bazarr
+    image_tag: latest
+    ports:
+    - 6767:6767
+    volumes:
+    - ${CONFIG_ROOT}/Bazarr/config:/config
+    - ${STORAGE_ROOT}/movies:/movies
+    - ${STORAGE_ROOT}/tv:/tv
+    service_port: '6767'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

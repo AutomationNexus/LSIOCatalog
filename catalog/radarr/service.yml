@@ -1,0 +1,23 @@
+display_name: Radarr
+subdomain: radarr
+routing: traefik
+auto_update_default: true
+containers:
+  radarr:
+    image_url: lscr.io/linuxserver/radarr
+    image_tag: latest
+    ports:
+    - 7878:7878
+    volumes:
+    - ${CONFIG_ROOT}/Radarr/config:/config
+    - ${STORAGE_ROOT}/movies:/movies
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '7878'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

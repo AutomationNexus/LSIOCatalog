@@ -1,0 +1,44 @@
+{
+  "catalog_id": "lsio",
+  "cs_renderer_pinned_ref": "6042815cff98895bc95cb69f5e802e8f37ea4516",
+  "generated_at": "2026-07-22T06:58:28Z",
+  "generator": "lsio_catalog_gen 0.0.0",
+  "services": {
+    "bazarr": {
+      "commit": "43145f42bb8a645342cfcf013a6759800336ea50",
+      "ref": "master",
+      "source_file": "readme-vars.yml",
+      "source_repo": "https://github.com/linuxserver/docker-bazarr",
+      "source_url": "https://raw.githubusercontent.com/linuxserver/docker-bazarr/master/readme-vars.yml"
+    },
+    "lidarr": {
+      "commit": "d53cf16647f0d693963731197c20a0837d7f2772",
+      "ref": "master",
+      "source_file": "readme-vars.yml",
+      "source_repo": "https://github.com/linuxserver/docker-lidarr",
+      "source_url": "https://raw.githubusercontent.com/linuxserver/docker-lidarr/master/readme-vars.yml"
+    },
+    "prowlarr": {
+      "commit": "43b40dc44b175fb8db21450411261d6e0dba96a2",
+      "ref": "main",
+      "source_file": "readme-vars.yml",
+      "source_repo": "https://github.com/linuxserver/docker-prowlarr",
+      "source_url": "https://raw.githubusercontent.com/linuxserver/docker-prowlarr/main/readme-vars.yml"
+    },
+    "radarr": {
+      "commit": "3bbffd133390b7bc69dd9b6df47049208cc43779",
+      "ref": "master",
+      "source_file": "readme-vars.yml",
+      "source_repo": "https://github.com/linuxserver/docker-radarr",
+      "source_url": "https://raw.githubusercontent.com/linuxserver/docker-radarr/master/readme-vars.yml"
+    },
+    "sonarr": {
+      "commit": "5283fcba39c6cd7593fae6ad43b2a34356c864f9",
+      "ref": "master",
+      "source_file": "readme-vars.yml",
+      "source_repo": "https://github.com/linuxserver/docker-sonarr",
+      "source_url": "https://raw.githubusercontent.com/linuxserver/docker-sonarr/master/readme-vars.yml"
+    }
+  },
+  "validated": true
+}

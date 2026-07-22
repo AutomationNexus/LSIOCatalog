@@ -1,0 +1,101 @@
+name: generate-lsio-catalog
+
+# Scheduled generator: convert LinuxServer.io metadata into the CognitiveSystems `lsio`
+# catalog, validate every generated service with a PINNED CS renderer, and publish +
+# tag ONLY validated output. Reject-on-failure: if validation fails, nothing is tagged.
+#
+# This is a STANDALONE generator workflow, deliberately NOT a fork of any
+# automationnexus/.github reusable workflow (CS's shared CI is for building/testing the
+# CS package, not for this converter). OPEN DECISION for platform-engineer / org-root:
+# whether a "scheduled catalog generator" should become a shared reusable workflow in
+# automationnexus/.github — see README "Open decisions".
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"   # weekly, Monday 05:17 UTC — expand coverage over time
+  workflow_dispatch: {}
+
+permissions:
+  contents: write          # push the published `catalog` branch + immutable tag
+
+concurrency:
+  group: generate-lsio-catalog
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout generator source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0    # git subtree split needs full history
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # ── CROSS-REPO AUTH WRINKLE (OPEN DECISION — see README "Validation") ──────────
+      # LSIOCatalog is PUBLIC; CognitiveSystems is PRIVATE. Installing the pinned CS
+      # renderer from git therefore needs a credential with read access to the private
+      # repo. The org standard for privileged cross-repo automation is a short-lived
+      # CI-Bot GitHub App token (never GITHUB_TOKEN / a PAT). Provision the CI-Bot App
+      # id + private key as repo/org secrets, then uncomment:
+      #
+      # - uses: actions/create-github-app-token@v1
+      #   id: cibot
+      #   with:
+      #     app-id: ${{ secrets.CI_BOT_APP_ID }}
+      #     private-key: ${{ secrets.CI_BOT_APP_PRIVATE_KEY }}
+      #     owner: AutomationNexus
+      #     repositories: CognitiveSystems
+      #
+      # Alternative (platform-engineer decision): if CS is ever published to PyPI,
+      # install `cognitivesystems==<pinned>` from PyPI and drop the token entirely.
+      - name: Install generator + pinned CS renderer
+        env:
+          # TODO(platform-engineer): replace with the CI-Bot App token minted above.
+          CS_INSTALL_TOKEN: ${{ secrets.CI_BOT_TOKEN }}
+        run: |
+          set -euo pipefail
+          python -m pip install -U pip
+          python -m pip install -e .
+          CS_REF="$(python -c 'import lsio_catalog_gen as m; print(m.CS_PINNED_REF)')"
+          if [ -z "${CS_INSTALL_TOKEN:-}" ]; then
+            echo "::error::CS renderer install token not configured — cannot validate. See README 'Validation' / the CI-auth open decision."
+            exit 1
+          fi
+          python -m pip install \
+            "cognitivesystems @ git+https://x-access-token:${CS_INSTALL_TOKEN}@github.com/AutomationNexus/CognitiveSystems@${CS_REF}"
+
+      - name: Generate + validate catalog (reject-on-failure)
+        run: |
+          set -euo pipefail
+          rm -rf catalog
+          # Exits non-zero if the renderer is missing or the tree fails CS validation,
+          # which fails the job so nothing is ever published/tagged unvalidated.
+          python -m lsio_catalog_gen --out catalog --apps-file apps.yml
+
+      - name: Publish validated catalog tree + immutable tag
+        run: |
+          set -euo pipefail
+          git config user.name  "ci-bot"
+          git config user.email "ci-bot@users.noreply.github.com"
+
+          # Commit the freshly generated tree on a throwaway ref, then use `git subtree
+          # split` to produce a commit whose ROOT is the catalog/ contents (catalog.yml
+          # at the tree root — exactly what CS's git fetcher validates and pins).
+          git add -f catalog
+          git commit -q -m "chore: regenerate lsio catalog $(date -u +%Y-%m-%dT%H:%MZ)" || {
+            echo "no catalog changes; nothing to publish"; exit 0; }
+
+          SPLIT_SHA="$(git subtree split --prefix=catalog)"
+          STAMP="$(date -u +%Y%m%d-%H%M)"
+          TAG="lsio-catalog-${STAMP}"
+
+          # Fast-forward-free publish: force the mutable `catalog` branch to the split
+          # commit, and create an IMMUTABLE tag CS pins to (never re-pointed).
+          git push --force origin "${SPLIT_SHA}:refs/heads/catalog"
+          git tag "${TAG}" "${SPLIT_SHA}"
+          git push origin "refs/tags/${TAG}"
+          echo "published catalog branch + tag ${TAG} (root commit ${SPLIT_SHA})"

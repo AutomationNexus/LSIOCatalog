@@ -1,0 +1,21 @@
+display_name: Tautulli
+subdomain: tautulli
+routing: traefik
+auto_update_default: true
+containers:
+  tautulli:
+    image_url: lscr.io/linuxserver/tautulli
+    image_tag: latest
+    ports:
+    - 8181:8181
+    volumes:
+    - ${CONFIG_ROOT}/Tautulli/config:/config
+    service_port: '8181'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

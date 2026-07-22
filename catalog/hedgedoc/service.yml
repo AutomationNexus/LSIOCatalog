@@ -1,0 +1,27 @@
+display_name: Hedgedoc
+subdomain: hedgedoc
+routing: traefik
+auto_update_default: true
+containers:
+  hedgedoc:
+    image_url: lscr.io/linuxserver/hedgedoc
+    image_tag: latest
+    ports:
+    - 3000:3000
+    volumes:
+    - ${CONFIG_ROOT}/Hedgedoc/config:/config
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      DB_HOST: <hostname or ip>
+      DB_PORT: '3306'
+      DB_USER: hedgedoc
+      DB_PASS: <secret password>
+      DB_NAME: hedgedoc
+      CMD_DOMAIN: localhost
+variants_supported:
+- web
+- websecure
+- wildcard

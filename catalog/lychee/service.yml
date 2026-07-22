@@ -1,0 +1,22 @@
+display_name: Lychee
+subdomain: lychee
+routing: traefik
+auto_update_default: true
+containers:
+  lychee:
+    image_url: lscr.io/linuxserver/lychee
+    image_tag: latest
+    ports:
+    - 80:80
+    volumes:
+    - ${CONFIG_ROOT}/Lychee/config:/config
+    - ${STORAGE_ROOT}/pictures:/pictures
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

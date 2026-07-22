@@ -1,0 +1,22 @@
+display_name: Apprise-api
+subdomain: apprise-api
+routing: traefik
+auto_update_default: true
+containers:
+  apprise-api:
+    image_url: lscr.io/linuxserver/apprise-api
+    image_tag: latest
+    ports:
+    - 8000:8000
+    volumes:
+    - ${CONFIG_ROOT}/Apprise-api/config:/config
+    - ${STORAGE_ROOT}/attachments:/attachments
+    service_port: '8000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

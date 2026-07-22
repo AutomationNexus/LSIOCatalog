@@ -1,0 +1,22 @@
+display_name: Deluge
+subdomain: deluge
+routing: traefik
+auto_update_default: true
+containers:
+  deluge:
+    image_url: lscr.io/linuxserver/deluge
+    image_tag: latest
+    ports:
+    - 8112:8112
+    volumes:
+    - ${CONFIG_ROOT}/Deluge/config:/config
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '8112'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

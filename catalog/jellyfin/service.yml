@@ -1,0 +1,23 @@
+display_name: Jellyfin
+subdomain: jellyfin
+routing: traefik
+auto_update_default: true
+containers:
+  jellyfin:
+    image_url: lscr.io/linuxserver/jellyfin
+    image_tag: latest
+    ports:
+    - 8096:8096
+    volumes:
+    - ${CONFIG_ROOT}/Jellyfin/config:/config
+    - ${STORAGE_ROOT}/data/tvshows:/data/tvshows
+    - ${STORAGE_ROOT}/data/movies:/data/movies
+    service_port: '8096'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

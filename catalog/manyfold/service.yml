@@ -1,0 +1,22 @@
+display_name: Manyfold
+subdomain: manyfold
+routing: traefik
+auto_update_default: true
+containers:
+  manyfold:
+    image_url: lscr.io/linuxserver/manyfold
+    image_tag: latest
+    ports:
+    - 3214:3214
+    volumes:
+    - ${CONFIG_ROOT}/Manyfold/config:/config
+    - ${STORAGE_ROOT}/libraries:/libraries
+    service_port: '3214'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

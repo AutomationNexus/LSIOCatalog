@@ -1,0 +1,21 @@
+display_name: Htpcmanager
+subdomain: htpcmanager
+routing: traefik
+auto_update_default: true
+containers:
+  htpcmanager:
+    image_url: lscr.io/linuxserver/htpcmanager
+    image_tag: latest
+    ports:
+    - 8085:8085
+    volumes:
+    - ${CONFIG_ROOT}/Htpcmanager/config:/config
+    service_port: '8085'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

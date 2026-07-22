@@ -1,0 +1,22 @@
+display_name: Wikijs
+subdomain: wikijs
+routing: traefik
+auto_update_default: true
+containers:
+  wikijs:
+    image_url: lscr.io/linuxserver/wikijs
+    image_tag: latest
+    ports:
+    - 3000:3000
+    volumes:
+    - ${CONFIG_ROOT}/Wikijs/config:/config
+    - ${STORAGE_ROOT}/data:/data
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

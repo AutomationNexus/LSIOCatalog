@@ -1,0 +1,23 @@
+display_name: Sealskin
+subdomain: sealskin
+routing: traefik
+auto_update_default: true
+containers:
+  sealskin:
+    image_url: lscr.io/linuxserver/sealskin
+    image_tag: latest
+    ports:
+    - 8443:8443
+    volumes:
+    - ${CONFIG_ROOT}/Sealskin/config:/config
+    - ${STORAGE_ROOT}/storage:/storage
+    - ${STORAGE_ROOT}/var/run/docker.sock:/var/run/docker.sock
+    service_port: '8443'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

@@ -1,0 +1,23 @@
+display_name: Duplicati
+subdomain: duplicati
+routing: traefik
+auto_update_default: true
+containers:
+  duplicati:
+    image_url: lscr.io/linuxserver/duplicati
+    image_tag: latest
+    ports:
+    - 8200:8200
+    volumes:
+    - ${CONFIG_ROOT}/Duplicati/config:/config
+    - ${STORAGE_ROOT}/backups:/backups
+    - ${STORAGE_ROOT}/source:/source
+    service_port: '8200'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

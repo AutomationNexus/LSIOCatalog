@@ -1,0 +1,21 @@
+display_name: Pwndrop
+subdomain: pwndrop
+routing: traefik
+auto_update_default: true
+containers:
+  pwndrop:
+    image_url: lscr.io/linuxserver/pwndrop
+    image_tag: latest
+    ports:
+    - 8080:8080
+    volumes:
+    - ${CONFIG_ROOT}/Pwndrop/config:/config
+    service_port: '8080'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

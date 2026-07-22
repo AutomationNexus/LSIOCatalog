@@ -1,0 +1,22 @@
+display_name: Jackett
+subdomain: jackett
+routing: traefik
+auto_update_default: true
+containers:
+  jackett:
+    image_url: lscr.io/linuxserver/jackett
+    image_tag: latest
+    ports:
+    - 9117:9117
+    volumes:
+    - ${CONFIG_ROOT}/Jackett/config:/config
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '9117'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

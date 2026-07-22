@@ -1,0 +1,22 @@
+display_name: Piper
+subdomain: piper
+routing: traefik
+auto_update_default: true
+containers:
+  piper:
+    image_url: lscr.io/linuxserver/piper
+    image_tag: latest
+    ports:
+    - 10200:10200
+    volumes:
+    - ${CONFIG_ROOT}/Piper/config:/config
+    service_port: '10200'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      PIPER_VOICE: en_US-lessac-medium
+variants_supported:
+- web
+- websecure
+- wildcard

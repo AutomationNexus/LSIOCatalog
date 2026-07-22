@@ -27,6 +27,7 @@ from . import CATALOG_ID, CS_PINNED_REF, __version__
 from . import fetch as _fetch
 from .convert import RejectionError, convert
 from .validate import (
+    RendererUnavailable,
     ServiceValidationError,
     validate_service,
     validate_tree,
@@ -183,11 +184,25 @@ def generate(apps, out_dir, *, fixtures_dir=None, ref="auto", validate=True) -> 
 
     for app in apps:
         source_repo = _fetch.source_repo(app)
+        # Per-app isolation is the whole point of a fleet-scale run: one app's malformed
+        # or missing readme-vars.yml, a network hiccup, or an unforeseen metadata shape
+        # must be RECORDED as a rejection and the run CONTINUED — never allowed to abort
+        # the whole fleet. Each stage below therefore catches its expected failure AND a
+        # defensive catch-all, so an unexpected exception on one app degrades to a
+        # reason-carrying rejection instead of crashing the run. The sole exception is
+        # RendererUnavailable (the pinned renderer is not installed at all) — a global
+        # environment failure that must abort, since nothing could be validated.
         try:
             rv, source_url, commit, used_ref = _load_input(
                 app, fixtures_dir=_as_path(fixtures_dir), ref=ref)
         except _fetch.FetchError as e:
             rejected.append({"app": app, "source_repo": source_repo, "reason": f"fetch failed: {e}"})
+            continue
+        except Exception as e:  # noqa: BLE001 - one app's load failure must not abort the fleet run
+            rejected.append({
+                "app": app, "source_repo": source_repo,
+                "reason": f"fetch failed: unexpected {type(e).__name__}: {e}",
+            })
             continue
 
         try:
@@ -195,8 +210,23 @@ def generate(apps, out_dir, *, fixtures_dir=None, ref="auto", validate=True) -> 
         except RejectionError as e:
             rejected.append({"app": app, "source_repo": source_repo, "reason": str(e)})
             continue
+        except Exception as e:  # noqa: BLE001 - a malformed readme-vars rejects this app, not the fleet
+            rejected.append({
+                "app": app, "source_repo": source_repo,
+                "reason": f"conversion error: unexpected {type(e).__name__}: {e}",
+            })
+            continue
 
         slug = defn["subdomain"]
+        if slug in provenance_services:
+            # Two different apps whose upstream project_name resolves to the same CS slug
+            # would silently overwrite each other's service.yml (and provenance). Reject
+            # the later one rather than emit a colliding tree.
+            rejected.append({
+                "app": app, "source_repo": source_repo,
+                "reason": f"duplicate service slug {slug!r} (already produced by another app)",
+            })
+            continue
         if validate:
             try:
                 validate_service(slug, defn)
@@ -204,6 +234,14 @@ def generate(apps, out_dir, *, fixtures_dir=None, ref="auto", validate=True) -> 
                 rejected.append({
                     "app": app, "source_repo": source_repo,
                     "reason": f"failed CS render validation: {e}",
+                })
+                continue
+            except RendererUnavailable:
+                raise  # global environment failure — abort; never emit unvalidated output
+            except Exception as e:  # noqa: BLE001 - an unexpected validator error rejects this app, not the fleet
+                rejected.append({
+                    "app": app, "source_repo": source_repo,
+                    "reason": f"failed CS render validation: unexpected {type(e).__name__}: {e}",
                 })
                 continue
 

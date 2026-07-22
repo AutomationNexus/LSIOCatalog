@@ -1,0 +1,29 @@
+display_name: Planka
+subdomain: planka
+routing: traefik
+auto_update_default: true
+containers:
+  planka:
+    image_url: lscr.io/linuxserver/planka
+    image_tag: latest
+    ports:
+    - 1337:1337
+    volumes:
+    - ${CONFIG_ROOT}/Planka/config:/config
+    service_port: '1337'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      BASE_URL: https://planka.example.com
+      DATABASE_URL: postgresql://user:password@planka-db:5432/planka
+      DEFAULT_ADMIN_EMAIL: demo@demo.demo
+      DEFAULT_ADMIN_USERNAME: demo
+      DEFAULT_ADMIN_PASSWORD: demo
+      DEFAULT_ADMIN_NAME: Demo User
+      SECRET_KEY: notasecretkey
+      TRUST_PROXY: 'false'
+variants_supported:
+- web
+- websecure
+- wildcard

@@ -1,0 +1,23 @@
+display_name: Sabnzbd
+subdomain: sabnzbd
+routing: traefik
+auto_update_default: true
+containers:
+  sabnzbd:
+    image_url: lscr.io/linuxserver/sabnzbd
+    image_tag: latest
+    ports:
+    - 8080:8080
+    volumes:
+    - ${CONFIG_ROOT}/Sabnzbd/config:/config
+    - ${STORAGE_ROOT}/incomplete-downloads:/incomplete-downloads
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '8080'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

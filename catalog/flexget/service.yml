@@ -1,0 +1,25 @@
+display_name: Flexget
+subdomain: flexget
+routing: traefik
+auto_update_default: true
+containers:
+  flexget:
+    image_url: lscr.io/linuxserver/flexget
+    image_tag: latest
+    ports:
+    - 5050:5050
+    volumes:
+    - ${CONFIG_ROOT}/Flexget/config:/config
+    - ${STORAGE_ROOT}/data:/data
+    service_port: '5050'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      FG_LOG_LEVEL: info
+      FG_LOG_FILE: /config/flexget.log
+      FG_CONFIG_FILE: /config/.flexget/config.yml
+variants_supported:
+- web
+- websecure
+- wildcard

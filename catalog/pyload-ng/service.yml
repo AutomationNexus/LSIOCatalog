@@ -1,0 +1,22 @@
+display_name: Pyload-ng
+subdomain: pyload-ng
+routing: traefik
+auto_update_default: true
+containers:
+  pyload-ng:
+    image_url: lscr.io/linuxserver/pyload-ng
+    image_tag: latest
+    ports:
+    - 8000:8000
+    volumes:
+    - ${CONFIG_ROOT}/Pyload-ng/config:/config
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '8000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

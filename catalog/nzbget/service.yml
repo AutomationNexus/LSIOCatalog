@@ -1,0 +1,22 @@
+display_name: Nzbget
+subdomain: nzbget
+routing: traefik
+auto_update_default: true
+containers:
+  nzbget:
+    image_url: lscr.io/linuxserver/nzbget
+    image_tag: latest
+    ports:
+    - 6789:6789
+    volumes:
+    - ${CONFIG_ROOT}/Nzbget/config:/config
+    - ${STORAGE_ROOT}/downloads:/downloads
+    service_port: '6789'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

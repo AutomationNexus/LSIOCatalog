@@ -1,0 +1,21 @@
+display_name: Thelounge
+subdomain: thelounge
+routing: traefik
+auto_update_default: true
+containers:
+  thelounge:
+    image_url: lscr.io/linuxserver/thelounge
+    image_tag: latest
+    ports:
+    - 9000:9000
+    volumes:
+    - ${CONFIG_ROOT}/Thelounge/config:/config
+    service_port: '9000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

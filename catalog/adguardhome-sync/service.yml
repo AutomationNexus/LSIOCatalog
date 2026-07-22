@@ -1,0 +1,21 @@
+display_name: Adguardhome-sync
+subdomain: adguardhome-sync
+routing: traefik
+auto_update_default: true
+containers:
+  adguardhome-sync:
+    image_url: lscr.io/linuxserver/adguardhome-sync
+    image_tag: latest
+    ports:
+    - 8080:8080
+    volumes:
+    - ${CONFIG_ROOT}/Adguardhome-sync/config:/config
+    service_port: '8080'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

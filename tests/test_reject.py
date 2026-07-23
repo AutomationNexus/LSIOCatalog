@@ -63,6 +63,48 @@ def test_ambiguous_multiport_rejected():
         convert(_base(param_ports=ports), app="app")
 
 
+def test_two_distinct_web_uis_no_primary_still_rejected():
+    """Two separate web UIs (Calibre-style desktop gui + webserver gui, plus an HTTPS
+    sibling) have no single primary — still rejected, never guessed."""
+    ports = [
+        {"external_port": "8080", "internal_port": "8080", "port_desc": "Calibre desktop gui (only for reverse proxy access)."},
+        {"external_port": "8181", "internal_port": "8181", "port_desc": "Calibre desktop gui HTTPS."},
+        {"external_port": "8081", "internal_port": "8081", "port_desc": "Calibre webserver gui (needs to be enabled in gui settings first)."},
+    ]
+    with pytest.raises(RejectionError, match="unambiguous primary"):
+        convert(_base(param_ports=ports), app="calibre")
+
+
+def test_two_unrelated_ports_no_web_signal_still_rejected():
+    """Two ports with no web-UI signal at all (Ubooquity library/admin) stay rejected."""
+    ports = [
+        {"external_port": "2202", "internal_port": "2202", "port_desc": "The library port."},
+        {"external_port": "2203", "internal_port": "2203", "port_desc": "The admin port."},
+    ]
+    with pytest.raises(RejectionError, match="unambiguous primary"):
+        convert(_base(param_ports=ports), app="ubooquity")
+
+
+def test_unsafe_networking_rejected_even_with_http_https_pair():
+    """The safe-subset check precedes port selection: an app with host networking is
+    rejected on networking even though its ports are a clean http+https pair."""
+    ports = [
+        {"external_port": "3000", "internal_port": "3000", "port_desc": "desktop gui HTTP"},
+        {"external_port": "3001", "internal_port": "3001", "port_desc": "desktop gui HTTPS"},
+    ]
+    with pytest.raises(RejectionError, match="networking"):
+        convert(_base(param_net="host", param_ports=ports), app="app")
+
+
+def test_udp_only_port_still_rejected_as_invalid_tcp():
+    """An app whose only port is udp/named is still rejected (not routable via traefik)."""
+    with pytest.raises(RejectionError, match="not a valid TCP port"):
+        convert(
+            _base(param_ports=[{"external_port": "514", "internal_port": "5514/udp", "port_desc": "Syslog UDP"}]),
+            app="syslog-ng",
+        )
+
+
 def test_multiport_with_single_web_port_is_accepted():
     ports = [
         {"external_port": "51413", "internal_port": "51413", "port_desc": "peer to peer"},

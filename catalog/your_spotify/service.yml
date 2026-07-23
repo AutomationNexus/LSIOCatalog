@@ -1,0 +1,26 @@
+display_name: Your_spotify
+subdomain: your_spotify
+routing: traefik
+auto_update_default: true
+containers:
+  your_spotify:
+    image_url: lscr.io/linuxserver/your_spotify
+    image_tag: latest
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ${CONFIG_ROOT}/Your_spotify/config:/config
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      APP_URL: http://localhost
+      SPOTIFY_API_DELAY_MS: '2000'
+      CORS: http://localhost:80,https://localhost:443
+      MONGO_ENDPOINT: mongodb://mongo:27017/your_spotify
+variants_supported:
+- web
+- websecure
+- wildcard

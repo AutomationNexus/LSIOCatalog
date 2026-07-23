@@ -8,6 +8,7 @@ containers:
     image_tag: latest
     ports:
     - 8080:8080
+    - 6881:6881
     volumes:
     - ${CONFIG_ROOT}/Qbittorrent/config:/config
     - ${STORAGE_ROOT}/downloads:/downloads

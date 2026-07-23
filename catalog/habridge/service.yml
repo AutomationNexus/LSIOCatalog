@@ -8,6 +8,7 @@ containers:
     image_tag: latest
     ports:
     - 8080:8080
+    - 50000:50000
     volumes:
     - ${CONFIG_ROOT}/Habridge/config:/config
     service_port: '8080'

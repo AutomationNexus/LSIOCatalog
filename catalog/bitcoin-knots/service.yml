@@ -1,0 +1,23 @@
+display_name: Bitcoin-knots
+subdomain: bitcoin-knots
+routing: traefik
+auto_update_default: true
+containers:
+  bitcoin-knots:
+    image_url: lscr.io/linuxserver/bitcoin-knots
+    image_tag: latest
+    ports:
+    - 3000:3000
+    - 3001:3001
+    - 8333:8333
+    volumes:
+    - ${CONFIG_ROOT}/Bitcoin-knots/config:/config
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

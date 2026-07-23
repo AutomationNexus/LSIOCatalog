@@ -1,0 +1,23 @@
+display_name: Mame
+subdomain: mame
+routing: traefik
+auto_update_default: true
+containers:
+  mame:
+    image_url: lscr.io/linuxserver/mame
+    image_tag: latest
+    ports:
+    - 3000:3000
+    - 3001:3001
+    volumes:
+    - ${CONFIG_ROOT}/Mame/config:/config
+    - ${STORAGE_ROOT}/mame:ro:/mame:ro
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

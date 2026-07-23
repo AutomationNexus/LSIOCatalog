@@ -1,0 +1,22 @@
+display_name: Gitqlient
+subdomain: gitqlient
+routing: traefik
+auto_update_default: true
+containers:
+  gitqlient:
+    image_url: lscr.io/linuxserver/gitqlient
+    image_tag: latest
+    ports:
+    - 3000:3000
+    - 3001:3001
+    volumes:
+    - ${CONFIG_ROOT}/Gitqlient/config:/config
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

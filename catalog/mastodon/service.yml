@@ -1,0 +1,35 @@
+display_name: Mastodon
+subdomain: mastodon
+routing: traefik
+auto_update_default: true
+containers:
+  mastodon:
+    image_url: lscr.io/linuxserver/mastodon
+    image_tag: latest
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ${CONFIG_ROOT}/Mastodon/config:/config
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      LOCAL_DOMAIN: example.com
+      REDIS_HOST: redis
+      REDIS_PORT: '6379'
+      DB_HOST: db
+      DB_USER: mastodon
+      DB_NAME: mastodon
+      DB_PASS: mastodon
+      DB_PORT: '5432'
+      ES_ENABLED: 'false'
+      SMTP_SERVER: mail.example.com
+      SMTP_PORT: '25'
+      SMTP_FROM_ADDRESS: notifications@example.com
+      S3_ENABLED: 'false'
+variants_supported:
+- web
+- websecure
+- wildcard

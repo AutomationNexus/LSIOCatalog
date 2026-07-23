@@ -1,0 +1,22 @@
+display_name: Ppsspp
+subdomain: ppsspp
+routing: traefik
+auto_update_default: true
+containers:
+  ppsspp:
+    image_url: lscr.io/linuxserver/ppsspp
+    image_tag: latest
+    ports:
+    - 3000:3000
+    - 3001:3001
+    volumes:
+    - ${CONFIG_ROOT}/Ppsspp/config:/config
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

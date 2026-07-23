@@ -8,6 +8,7 @@ containers:
     image_tag: latest
     ports:
     - 8888:8888
+    - 55555:55555
     volumes:
     - ${CONFIG_ROOT}/Resilio-sync/config:/config
     - ${STORAGE_ROOT}/downloads:/downloads

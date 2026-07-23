@@ -1,0 +1,22 @@
+display_name: Budge
+subdomain: budge
+routing: traefik
+auto_update_default: true
+containers:
+  budge:
+    image_url: lscr.io/linuxserver/budge
+    image_tag: latest
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ${CONFIG_ROOT}/Budge/config:/config
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

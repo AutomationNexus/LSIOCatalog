@@ -1,0 +1,23 @@
+display_name: Cops
+subdomain: cops
+routing: traefik
+auto_update_default: true
+containers:
+  cops:
+    image_url: lscr.io/linuxserver/cops
+    image_tag: latest
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ${CONFIG_ROOT}/Cops/config:/config
+    - ${STORAGE_ROOT}/books:/books
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

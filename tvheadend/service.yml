@@ -8,6 +8,7 @@ containers:
     image_tag: latest
     ports:
     - 9981:9981
+    - 9982:9982
     volumes:
     - ${CONFIG_ROOT}/Tvheadend/config:/config
     - ${STORAGE_ROOT}/recordings:/recordings

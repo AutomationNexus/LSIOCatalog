@@ -1,0 +1,23 @@
+display_name: Qdirstat
+subdomain: qdirstat
+routing: traefik
+auto_update_default: true
+containers:
+  qdirstat:
+    image_url: lscr.io/linuxserver/qdirstat
+    image_tag: latest
+    ports:
+    - 3000:3000
+    - 3001:3001
+    volumes:
+    - ${CONFIG_ROOT}/Qdirstat/config:/config
+    - ${STORAGE_ROOT}/data:/data
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

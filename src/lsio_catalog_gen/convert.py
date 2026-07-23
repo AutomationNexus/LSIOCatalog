@@ -44,8 +44,21 @@ _ENV_NAME_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 _TEMPLATE_MARKERS = ("{{", "}}", "${")
 
 # Words in a port description that mark it as the primary human-facing web/UI port,
-# used to disambiguate when an image documents more than one port.
-_WEB_PORT_RE = re.compile(r"web|ui|interface|http|gui|dashboard|panel", re.IGNORECASE)
+# used to disambiguate when an image documents more than one port. The bare "ui" token
+# is word-boundary-anchored so it doesn't false-match inside unrelated words (e.g. the
+# "ui" in "Req[ui]red"); the longer, unambiguous tokens stay plain substrings so
+# "WebUI"/"webgui" still match.
+_WEB_PORT_RE = re.compile(r"web|http|gui|dashboard|panel|interface|\bui\b", re.IGNORECASE)
+
+# Words in a port description that mark a port as the TLS/HTTPS *sibling* of a plain-HTTP
+# web port. Used to prefer the plain-HTTP port as the routed primary (CS/traefik
+# terminates TLS itself) while still publishing the HTTPS port alongside it.
+_HTTPS_PORT_RE = re.compile(r"https|\bssl\b|\btls\b", re.IGNORECASE)
+
+# Well-known HTTP/HTTPS port pairs (plain-HTTP first). When descriptions don't
+# disambiguate but the two ports are a recognizable http+https pair, the plain-HTTP
+# side is the routed primary. Description signals always take precedence over this.
+_HTTP_HTTPS_PAIRS = (("3000", "3001"), ("80", "443"), ("8080", "8443"))
 
 
 class RejectionError(Exception):
@@ -184,8 +197,86 @@ def _display_name(rv: dict, slug: str) -> str:
     return slug.capitalize()
 
 
-def _primary_port(rv: dict) -> tuple[str, str]:
-    """Select the single primary web port to publish and route.
+def _is_valid_tcp(port: str) -> bool:
+    """Return whether a port string is a bare, in-range TCP port number.
+
+    Rejects ``/udp`` / ``/tcp`` suffixes, port ranges, and named ports — CS routes a
+    single TCP web port via traefik, so only bare TCP numbers are representable.
+
+    Parameters
+    ----------
+    port : str
+        A candidate internal or external port string.
+
+    Returns
+    -------
+    bool
+        ``True`` if ``port`` is all digits and ``0 < port < 65536``.
+    """
+    return port.isdigit() and 0 < int(port) < 65536
+
+
+def _choose_primary(tcp: list) -> tuple | None:
+    """Pick the primary (routed) web port from several valid-TCP candidates.
+
+    Signals, in priority order (a genuinely ambiguous set returns ``None`` — the caller
+    rejects rather than guesses):
+
+    1. **Description** — if exactly one port's description names a plain-HTTP web UI
+       (matches :data:`_WEB_PORT_RE` and *not* :data:`_HTTPS_PORT_RE`), it is the
+       primary. This deliberately prefers the plain-HTTP port over its HTTPS sibling
+       (CS/traefik terminates TLS) and correctly handles cases where the real web UI is
+       the HTTPS-numbered port (e.g. Unifi's ``8443`` "web admin", ``8080`` "device
+       communication") because only ``8443`` matches a web description.
+    2. **Well-known pair by number** — when descriptions don't disambiguate but the two
+       ports are a recognizable http+https pair (:data:`_HTTP_HTTPS_PAIRS`), the
+       plain-HTTP side is primary.
+    3. **Single web port** — if exactly one candidate looks like a web port at all
+       (HTTP or HTTPS) and the rest are clearly non-web (p2p/rpc/dns/…), route it.
+
+    Parameters
+    ----------
+    tcp : list of (str, str, str)
+        ``(external, internal, desc)`` triples, each a valid TCP port.
+
+    Returns
+    -------
+    tuple or None
+        The chosen ``(external, internal, desc)``, or ``None`` when no unambiguous
+        primary web port can be identified.
+    """
+    if len(tcp) == 1:
+        return tcp[0]
+
+    # 1. exactly one plain-HTTP web port by description (HTTPS siblings excluded).
+    http_web = [c for c in tcp if _WEB_PORT_RE.search(c[2]) and not _HTTPS_PORT_RE.search(c[2])]
+    if len(http_web) == 1:
+        return http_web[0]
+
+    # 2. a recognizable http+https pair by number → the plain-HTTP side (only when the
+    #    two candidates ARE that pair, so an app with more ports isn't mis-picked).
+    if len(tcp) == 2:
+        ints = {c[1] for c in tcp}
+        for lo, hi in _HTTP_HTTPS_PAIRS:
+            if ints == {lo, hi}:
+                return next(c for c in tcp if c[1] == lo)
+
+    # 3. exactly one web-ish port, rest clearly non-web.
+    web = [c for c in tcp if _WEB_PORT_RE.search(c[2])]
+    if len(web) == 1:
+        return web[0]
+
+    return None
+
+
+def _select_ports(rv: dict) -> tuple[str, list]:
+    """Select the routed primary web port and the full set of published TCP ports.
+
+    Improves on a naive "one port only" rule: an image that documents several ports
+    (very commonly an HTTP+HTTPS web-UI pair, or a web UI plus an auxiliary port) is now
+    representable — the primary web port is routed and every valid-TCP port is published
+    — instead of being rejected. Genuinely ambiguous images (multiple unrelated services,
+    no web signal) are still rejected, never guessed.
 
     Parameters
     ----------
@@ -194,16 +285,18 @@ def _primary_port(rv: dict) -> tuple[str, str]:
 
     Returns
     -------
-    (str, str)
-        ``(external_port, internal_port)`` for the primary web port. The external
-        port defaults to the app's OWN documented external port (a sensible, neutral
-        default the operator overrides at install time), never an invented one.
+    (str, list of str)
+        ``(service_port, published)`` where ``service_port`` is the primary web port's
+        internal port (traefik's loadbalancer target) and ``published`` is the list of
+        ``ext:int`` host:container bind strings (primary first). External ports default
+        to the app's OWN documented port, never an invented one.
 
     Raises
     ------
     RejectionError
-        If the image declares no port (nothing to route via traefik) or multiple
-        ports with no unambiguous primary web port.
+        If the image declares no port (nothing to route via traefik), only non-TCP
+        ports (udp/ranges/named), or multiple ports with no unambiguous primary web
+        port.
     """
     if not _truthy(rv.get("param_usage_include_ports")):
         raise RejectionError("no published port declared (cannot route via traefik)")
@@ -222,20 +315,32 @@ def _primary_port(rv: dict) -> tuple[str, str]:
     if not normalized:
         raise RejectionError("no usable internal port declared")
 
-    if len(normalized) == 1:
-        ext, internal, _ = normalized[0]
-    else:
-        web = [(e, i, d) for (e, i, d) in normalized if _WEB_PORT_RE.search(d)]
-        if len(web) != 1:
-            raise RejectionError(
-                "multiple ports with no unambiguous primary web port")
-        ext, internal, _ = web[0]
+    tcp = [(e, i, d) for (e, i, d) in normalized if _is_valid_tcp(i)]
+    if not tcp:
+        # Preserve the precise reason (e.g. a single udp-only or named port).
+        raise RejectionError(f"internal port {normalized[0][1]!r} is not a valid TCP port")
 
-    if not internal.isdigit() or not (0 < int(internal) < 65536):
-        raise RejectionError(f"internal port {internal!r} is not a valid TCP port")
-    if not ext.isdigit() or not (0 < int(ext) < 65536):
-        ext = internal  # default host port == container port; operator overrides later
-    return ext, internal
+    primary = _choose_primary(tcp)
+    if primary is None:
+        raise RejectionError("multiple ports with no unambiguous primary web port")
+
+    published: list = []
+    seen: set = set()
+
+    def _publish(ext: str, internal: str) -> None:
+        if not _is_valid_tcp(ext):
+            ext = internal  # default host port == container port; operator overrides later
+        mapping = f"{ext}:{internal}"
+        if mapping not in seen:
+            seen.add(mapping)
+            published.append(mapping)
+
+    p_ext, p_internal, _ = primary
+    _publish(p_ext, p_internal)  # primary first
+    for ext, internal, _ in tcp:
+        _publish(ext, internal)  # HTTPS sibling + any auxiliary TCP ports, deduped
+
+    return p_internal, published
 
 
 def _volumes(rv: dict, display_name: str) -> list[str]:
@@ -366,7 +471,7 @@ def convert(rv: dict, *, app: str) -> dict:
     ------
     RejectionError
         If the image is not a mapping, or uses semantics CS cannot faithfully/safely
-        represent (see :func:`_reject_unsafe`, :func:`_primary_port`, :func:`_volumes`).
+        represent (see :func:`_reject_unsafe`, :func:`_select_ports`, :func:`_volumes`).
     """
     if not isinstance(rv, dict):
         raise RejectionError("readme-vars is not a mapping")
@@ -374,7 +479,7 @@ def convert(rv: dict, *, app: str) -> dict:
     _reject_unsafe(rv, app)
     slug = _project_name(rv, app)
     display_name = _display_name(rv, slug)
-    ext, internal = _primary_port(rv)
+    service_port, published_ports = _select_ports(rv)
 
     image_tag = "latest"
     if not _IMAGE_TAG_RE.match(image_tag):  # pragma: no cover - constant, defensive
@@ -383,9 +488,9 @@ def convert(rv: dict, *, app: str) -> dict:
     container = {
         "image_url": f"lscr.io/linuxserver/{slug}",
         "image_tag": image_tag,
-        "ports": [f"{ext}:{internal}"],
+        "ports": published_ports,
         "volumes": _volumes(rv, display_name),
-        "service_port": str(internal),
+        "service_port": str(service_port),
         "environment": _environment(rv),
     }
     return {

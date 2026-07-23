@@ -1,95 +1,10 @@
 {
-  "generated_at": "2026-07-22T19:04:04Z",
+  "generated_at": "2026-07-23T06:20:58Z",
   "rejected": [
-    {
-      "app": "altus",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-altus"
-    },
-    {
-      "app": "ardour",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-ardour"
-    },
-    {
-      "app": "audacity",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-audacity"
-    },
-    {
-      "app": "azahar",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-azahar"
-    },
-    {
-      "app": "bambustudio",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-bambustudio"
-    },
-    {
-      "app": "bitcoin-knots",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-bitcoin-knots"
-    },
-    {
-      "app": "blade-of-agony",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-blade-of-agony"
-    },
-    {
-      "app": "blender",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-blender"
-    },
-    {
-      "app": "boinc",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-boinc"
-    },
-    {
-      "app": "brave",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-brave"
-    },
-    {
-      "app": "budge",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-budge"
-    },
     {
       "app": "calibre",
       "reason": "multiple ports with no unambiguous primary web port",
       "source_repo": "https://github.com/linuxserver/docker-calibre"
-    },
-    {
-      "app": "calligra",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-calligra"
-    },
-    {
-      "app": "chrome",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-chrome"
-    },
-    {
-      "app": "chromium",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-chromium"
-    },
-    {
-      "app": "cops",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-cops"
-    },
-    {
-      "app": "cura",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-cura"
-    },
-    {
-      "app": "darktable",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-darktable"
     },
     {
       "app": "ddclient",
@@ -97,34 +12,9 @@
       "source_repo": "https://github.com/linuxserver/docker-ddclient"
     },
     {
-      "app": "digikam",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-digikam"
-    },
-    {
-      "app": "dogwalk",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-dogwalk"
-    },
-    {
-      "app": "dolphin",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-dolphin"
-    },
-    {
       "app": "doplarr_rs",
       "reason": "no published port declared (cannot route via traefik)",
       "source_repo": "https://github.com/linuxserver/docker-doplarr_rs"
-    },
-    {
-      "app": "dosbox-staging",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-dosbox-staging"
-    },
-    {
-      "app": "doublecommander",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-doublecommander"
     },
     {
       "app": "duckdns",
@@ -132,24 +22,9 @@
       "source_repo": "https://github.com/linuxserver/docker-duckdns"
     },
     {
-      "app": "duckstation",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-duckstation"
-    },
-    {
-      "app": "eden",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-eden"
-    },
-    {
       "app": "fail2ban",
       "reason": "host/custom networking (param_net: 'host') is not representable",
       "source_repo": "https://github.com/linuxserver/docker-fail2ban"
-    },
-    {
-      "app": "ferdium",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-ferdium"
     },
     {
       "app": "ffmpeg",
@@ -157,34 +32,9 @@
       "source_repo": "https://github.com/linuxserver/docker-ffmpeg"
     },
     {
-      "app": "filezilla",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-filezilla"
-    },
-    {
-      "app": "firefox",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-firefox"
-    },
-    {
-      "app": "flycast",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-flycast"
-    },
-    {
       "app": "foldingathome",
       "reason": "no published port declared (cannot route via traefik)",
       "source_repo": "https://github.com/linuxserver/docker-foldingathome"
-    },
-    {
-      "app": "freecad",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-freecad"
-    },
-    {
-      "app": "gimp",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-gimp"
     },
     {
       "app": "github-desktop",
@@ -192,54 +42,9 @@
       "source_repo": "https://github.com/linuxserver/docker-github-desktop"
     },
     {
-      "app": "gitqlient",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-gitqlient"
-    },
-    {
-      "app": "gzdoom",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-gzdoom"
-    },
-    {
-      "app": "handbrake",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-handbrake"
-    },
-    {
-      "app": "heimdall",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-heimdall"
-    },
-    {
-      "app": "helium",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-helium"
-    },
-    {
       "app": "homeassistant",
       "reason": "host/custom networking (param_net: 'host') is not representable",
       "source_repo": "https://github.com/linuxserver/docker-homeassistant"
-    },
-    {
-      "app": "inkscape",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-inkscape"
-    },
-    {
-      "app": "intellij-idea",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-intellij-idea"
-    },
-    {
-      "app": "joplin",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-joplin"
-    },
-    {
-      "app": "kali-linux",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-kali-linux"
     },
     {
       "app": "kasm",
@@ -247,34 +52,9 @@
       "source_repo": "https://github.com/linuxserver/docker-kasm"
     },
     {
-      "app": "kdenlive",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-kdenlive"
-    },
-    {
-      "app": "keepassxc",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-keepassxc"
-    },
-    {
-      "app": "kicad",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-kicad"
-    },
-    {
-      "app": "kimai",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-kimai"
-    },
-    {
       "app": "kometa",
       "reason": "no published port declared (cannot route via traefik)",
       "source_repo": "https://github.com/linuxserver/docker-kometa"
-    },
-    {
-      "app": "krita",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-krita"
     },
     {
       "app": "ldap-auth",
@@ -282,49 +62,9 @@
       "source_repo": "https://github.com/linuxserver/docker-ldap-auth"
     },
     {
-      "app": "libreoffice",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-libreoffice"
-    },
-    {
-      "app": "librewolf",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-librewolf"
-    },
-    {
-      "app": "lm-studio",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-lm-studio"
-    },
-    {
-      "app": "lollypop",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-lollypop"
-    },
-    {
       "app": "luanti",
       "reason": "internal port '30000/udp' is not a valid TCP port",
       "source_repo": "https://github.com/linuxserver/docker-luanti"
-    },
-    {
-      "app": "mame",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-mame"
-    },
-    {
-      "app": "mastodon",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-mastodon"
-    },
-    {
-      "app": "mediaelch",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-mediaelch"
-    },
-    {
-      "app": "melonds",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-melonds"
     },
     {
       "app": "minisatip",
@@ -337,16 +77,6 @@
       "source_repo": "https://github.com/linuxserver/docker-modmanager"
     },
     {
-      "app": "modrinth",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-modrinth"
-    },
-    {
-      "app": "msedge",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-msedge"
-    },
-    {
       "app": "mullvad-browser",
       "reason": "added Linux capabilities are not representable",
       "source_repo": "https://github.com/linuxserver/docker-mullvad-browser"
@@ -357,49 +87,9 @@
       "source_repo": "https://github.com/linuxserver/docker-mysql-workbench"
     },
     {
-      "app": "nginx",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-nginx"
-    },
-    {
-      "app": "obsidian",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-obsidian"
-    },
-    {
-      "app": "onlyoffice",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-onlyoffice"
-    },
-    {
-      "app": "openshot",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-openshot"
-    },
-    {
-      "app": "opera",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-opera"
-    },
-    {
-      "app": "orcaslicer",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-orcaslicer"
-    },
-    {
       "app": "oscam",
       "reason": "required device passthrough is not representable",
       "source_repo": "https://github.com/linuxserver/docker-oscam"
-    },
-    {
-      "app": "pcsx2",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-pcsx2"
-    },
-    {
-      "app": "pidgin",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-pidgin"
     },
     {
       "app": "plex",
@@ -407,44 +97,9 @@
       "source_repo": "https://github.com/linuxserver/docker-plex"
     },
     {
-      "app": "ppsspp",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-ppsspp"
-    },
-    {
-      "app": "pycharm",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-pycharm"
-    },
-    {
-      "app": "qdirstat",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-qdirstat"
-    },
-    {
       "app": "qemu-static",
       "reason": "no published port declared (cannot route via traefik)",
       "source_repo": "https://github.com/linuxserver/docker-qemu-static"
-    },
-    {
-      "app": "rawtherapee",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-rawtherapee"
-    },
-    {
-      "app": "remmina",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-remmina"
-    },
-    {
-      "app": "retroarch",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-retroarch"
-    },
-    {
-      "app": "rpcs3",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-rpcs3"
     },
     {
       "app": "rsnapshot",
@@ -452,44 +107,9 @@
       "source_repo": "https://github.com/linuxserver/docker-rsnapshot"
     },
     {
-      "app": "rustdesk",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-rustdesk"
-    },
-    {
-      "app": "scummvm",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-scummvm"
-    },
-    {
-      "app": "shadps4",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-shadps4"
-    },
-    {
-      "app": "shotcut",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-shotcut"
-    },
-    {
-      "app": "signal",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-signal"
-    },
-    {
       "app": "socket-proxy",
       "reason": "no published port declared (cannot route via traefik)",
       "source_repo": "https://github.com/linuxserver/docker-socket-proxy"
-    },
-    {
-      "app": "spotube",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-spotube"
-    },
-    {
-      "app": "sqlitebrowser",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-sqlitebrowser"
     },
     {
       "app": "steam",
@@ -503,43 +123,13 @@
     },
     {
       "app": "syslog-ng",
-      "reason": "multiple ports with no unambiguous primary web port",
+      "reason": "internal port '5514/udp' is not a valid TCP port",
       "source_repo": "https://github.com/linuxserver/docker-syslog-ng"
-    },
-    {
-      "app": "telegram",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-telegram"
-    },
-    {
-      "app": "thunderbird",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-thunderbird"
     },
     {
       "app": "ubooquity",
       "reason": "multiple ports with no unambiguous primary web port",
       "source_repo": "https://github.com/linuxserver/docker-ubooquity"
-    },
-    {
-      "app": "ungoogled-chromium",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-ungoogled-chromium"
-    },
-    {
-      "app": "unifi-network-application",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-unifi-network-application"
-    },
-    {
-      "app": "vivaldi",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-vivaldi"
-    },
-    {
-      "app": "vlc",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-vlc"
     },
     {
       "app": "vscode",
@@ -552,34 +142,9 @@
       "source_repo": "https://github.com/linuxserver/docker-vscodium"
     },
     {
-      "app": "webcord",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-webcord"
-    },
-    {
       "app": "webgrabplus",
       "reason": "no published port declared (cannot route via traefik)",
       "source_repo": "https://github.com/linuxserver/docker-webgrabplus"
-    },
-    {
-      "app": "webstation",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-webstation"
-    },
-    {
-      "app": "webtop",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-webtop"
-    },
-    {
-      "app": "weixin",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-weixin"
-    },
-    {
-      "app": "winegui",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-winegui"
     },
     {
       "app": "wireguard",
@@ -590,41 +155,6 @@
       "app": "wireshark",
       "reason": "host/custom networking (param_net: 'host') is not representable",
       "source_repo": "https://github.com/linuxserver/docker-wireshark"
-    },
-    {
-      "app": "wps-office",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-wps-office"
-    },
-    {
-      "app": "xbackbone",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-xbackbone"
-    },
-    {
-      "app": "xemu",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-xemu"
-    },
-    {
-      "app": "yaak",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-yaak"
-    },
-    {
-      "app": "your_spotify",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-your_spotify"
-    },
-    {
-      "app": "zen",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-zen"
-    },
-    {
-      "app": "zotero",
-      "reason": "multiple ports with no unambiguous primary web port",
-      "source_repo": "https://github.com/linuxserver/docker-zotero"
     }
   ]
 }

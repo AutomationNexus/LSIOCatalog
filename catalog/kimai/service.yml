@@ -1,0 +1,24 @@
+display_name: Kimai
+subdomain: kimai
+routing: traefik
+auto_update_default: true
+containers:
+  kimai:
+    image_url: lscr.io/linuxserver/kimai
+    image_tag: latest
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ${CONFIG_ROOT}/Kimai/config:/config
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      DATABASE_URL: mysql://your_db_user:your_db_pass@your_db_host:3306/your_db_name?charset=your_db_charset&serverVersion=your_db_version
+      TRUSTED_HOSTS: kimai.example.com
+variants_supported:
+- web
+- websecure
+- wildcard

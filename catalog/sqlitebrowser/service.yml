@@ -1,0 +1,22 @@
+display_name: Sqlitebrowser
+subdomain: sqlitebrowser
+routing: traefik
+auto_update_default: true
+containers:
+  sqlitebrowser:
+    image_url: lscr.io/linuxserver/sqlitebrowser
+    image_tag: latest
+    ports:
+    - 3000:3000
+    - 3001:3001
+    volumes:
+    - ${CONFIG_ROOT}/Sqlitebrowser/config:/config
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

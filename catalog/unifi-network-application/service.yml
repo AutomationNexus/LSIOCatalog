@@ -1,0 +1,27 @@
+display_name: Unifi-network-application
+subdomain: unifi-network-application
+routing: traefik
+auto_update_default: true
+containers:
+  unifi-network-application:
+    image_url: lscr.io/linuxserver/unifi-network-application
+    image_tag: latest
+    ports:
+    - 8443:8443
+    - 8080:8080
+    volumes:
+    - ${CONFIG_ROOT}/Unifi-network-application/config:/config
+    service_port: '8443'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      MONGO_USER: unifi
+      MONGO_HOST: unifi-db
+      MONGO_PORT: '27017'
+      MONGO_DBNAME: unifi
+      MONGO_AUTHSOURCE: admin
+variants_supported:
+- web
+- websecure
+- wildcard

@@ -8,6 +8,7 @@ containers:
     image_tag: latest
     ports:
     - 8112:8112
+    - 6881:6881
     volumes:
     - ${CONFIG_ROOT}/Deluge/config:/config
     - ${STORAGE_ROOT}/downloads:/downloads

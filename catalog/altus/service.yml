@@ -1,0 +1,22 @@
+display_name: Altus
+subdomain: altus
+routing: traefik
+auto_update_default: true
+containers:
+  altus:
+    image_url: lscr.io/linuxserver/altus
+    image_tag: latest
+    ports:
+    - 3000:3000
+    - 3001:3001
+    volumes:
+    - ${CONFIG_ROOT}/Altus/config:/config
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

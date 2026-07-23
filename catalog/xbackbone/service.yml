@@ -1,0 +1,22 @@
+display_name: Xbackbone
+subdomain: xbackbone
+routing: traefik
+auto_update_default: true
+containers:
+  xbackbone:
+    image_url: lscr.io/linuxserver/xbackbone
+    image_tag: latest
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ${CONFIG_ROOT}/Xbackbone/config:/config
+    service_port: '80'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

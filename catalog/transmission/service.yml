@@ -8,6 +8,7 @@ containers:
     image_tag: latest
     ports:
     - 9091:9091
+    - 51413:51413
     volumes:
     - ${CONFIG_ROOT}/Transmission/config:/config
     - ${STORAGE_ROOT}/downloads:/downloads

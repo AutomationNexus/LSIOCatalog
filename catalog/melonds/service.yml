@@ -1,0 +1,22 @@
+display_name: Melonds
+subdomain: melonds
+routing: traefik
+auto_update_default: true
+containers:
+  melonds:
+    image_url: lscr.io/linuxserver/melonds
+    image_tag: latest
+    ports:
+    - 3000:3000
+    - 3001:3001
+    volumes:
+    - ${CONFIG_ROOT}/Melonds/config:/config
+    service_port: '3000'
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+variants_supported:
+- web
+- websecure
+- wildcard

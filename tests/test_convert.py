@@ -67,6 +67,70 @@ def test_config_volume_synthesized_when_absent():
     assert c["volumes"][0] == "${CONFIG_ROOT}/Widget/config:/config"
 
 
+def test_http_https_pair_accepts_and_routes_http():
+    """A KasmVNC-style http+https web-UI pair (3000/3001) is now accepted, routing the
+    plain-HTTP port and publishing both (previously rejected as ambiguous)."""
+    defn = convert(
+        {
+            "project_name": "audacity",
+            "param_usage_include_ports": True,
+            "param_ports": [
+                {"external_port": "3000", "internal_port": "3000",
+                 "port_desc": "Audacity desktop gui HTTP, must be proxied."},
+                {"external_port": "3001", "internal_port": "3001",
+                 "port_desc": "Audacity desktop gui HTTPS."},
+            ],
+        },
+        app="audacity",
+    )
+    c = defn["containers"]["audacity"]
+    assert c["service_port"] == "3000"          # routed = plain-HTTP side
+    assert c["ports"][0] == "3000:3000"         # primary published first
+    assert "3001:3001" in c["ports"]            # HTTPS sibling still published
+    assert len(c["ports"]) == 2
+
+
+def test_https_numbered_webui_picked_by_description():
+    """When the real web UI is on the HTTPS-numbered port (Unifi 8443 'web admin' vs
+    8080 'device communication'), the description — not the number — picks it; udp
+    ports are dropped, the auxiliary TCP port is still published."""
+    defn = convert(
+        {
+            "project_name": "unifi-network-application",
+            "param_usage_include_ports": True,
+            "param_ports": [
+                {"external_port": "8443", "internal_port": "8443", "port_desc": "Unifi web admin port"},
+                {"external_port": "3478", "internal_port": "3478/udp", "port_desc": "Unifi STUN port"},
+                {"external_port": "8080", "internal_port": "8080", "port_desc": "Required for device communication"},
+            ],
+        },
+        app="unifi-network-application",
+    )
+    c = defn["containers"]["unifi-network-application"]
+    assert c["service_port"] == "8443"          # web admin, not the http-numbered 8080
+    assert "8443:8443" in c["ports"] and "8080:8080" in c["ports"]
+    assert all("udp" not in p for p in c["ports"])  # non-TCP ports dropped
+
+
+def test_web_ui_plus_auxiliary_port_are_both_published():
+    """A single web UI alongside a non-web auxiliary port routes the web UI and still
+    publishes the auxiliary port."""
+    defn = convert(
+        {
+            "project_name": "transmission",
+            "param_usage_include_ports": True,
+            "param_ports": [
+                {"external_port": "9091", "internal_port": "9091", "port_desc": "the web ui"},
+                {"external_port": "51413", "internal_port": "51413", "port_desc": "peer to peer, torrent"},
+            ],
+        },
+        app="transmission",
+    )
+    c = defn["containers"]["transmission"]
+    assert c["service_port"] == "9091"
+    assert "9091:9091" in c["ports"] and "51413:51413" in c["ports"]
+
+
 def test_required_documented_env_is_kept_but_optional_and_templated_dropped():
     defn = convert(
         {

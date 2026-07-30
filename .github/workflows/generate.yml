@@ -24,7 +24,10 @@ concurrency:
 
 jobs:
   generate:
-    runs-on: ubuntu-latest
+    # The org's ARC pool. Label matching requires ALL labels, so a bare
+    # `ubuntu-latest` would resolve to GitHub's hosted pool instead — there are no
+    # hosted runners left in this org, public repos included.
+    runs-on: ["linux", "x64", "k3s", "ubuntu-latest"]
     steps:
       - name: Checkout generator source
         uses: actions/checkout@v4

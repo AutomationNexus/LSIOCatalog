@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T06:20:58Z",
+  "generated_at": "2026-10-19T10:57:05Z",
   "rejected": [
     {
       "app": "calibre",
@@ -110,11 +110,6 @@
       "app": "socket-proxy",
       "reason": "no published port declared (cannot route via traefik)",
       "source_repo": "https://github.com/linuxserver/docker-socket-proxy"
-    },
-    {
-      "app": "steam",
-      "reason": "custom security options (seccomp/apparmor) are not representable",
-      "source_repo": "https://github.com/linuxserver/docker-steam"
     },
     {
       "app": "swag",

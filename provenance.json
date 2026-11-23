@@ -1,1187 +1,1194 @@
 {
   "catalog_id": "lsio",
   "cs_renderer_pinned_ref": "51992934f69bdfdcebc3101647b2537f9f69a34d",
-  "generated_at": "2026-07-23T06:20:58Z",
+  "generated_at": "2026-11-23T16:11:12Z",
   "generator": "lsio_catalog_gen 0.0.0",
   "services": {
     "adguardhome-sync": {
-      "commit": "2dc92ae65f341feaa30bb38ee75f2322c0e85a12",
+      "commit": "4e24d5373b182cfba69ddbf83c7981eb0d4662bc",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-adguardhome-sync",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-adguardhome-sync/main/readme-vars.yml"
     },
     "airsonic-advanced": {
-      "commit": "47672fd5d2fea9e2428ad57a7cc6cd4c52473426",
+      "commit": "873ee6afb93d67e1fac1465fb1100872ab67e3d7",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-airsonic-advanced",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-airsonic-advanced/master/readme-vars.yml"
     },
     "altus": {
-      "commit": "c31dbd2f226748bc8b3e7db7b45cd9ab915b1344",
+      "commit": "b1d1ce1a89baca6c9ae191cce446403c852d3338",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-altus",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-altus/master/readme-vars.yml"
     },
     "apprise-api": {
-      "commit": "1a5af6067e10b966c47f61da325b11df68815b5a",
+      "commit": "271a65dd1b298c112c1a426b498a4dd11068ae37",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-apprise-api",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-apprise-api/main/readme-vars.yml"
     },
     "ardour": {
-      "commit": "2898fb09d627ed1399438ed0bc3efc7db4d685bb",
+      "commit": "c668f76133bf1b820cb4ea93a9a8e1eb410ecb31",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-ardour",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-ardour/master/readme-vars.yml"
     },
     "audacity": {
-      "commit": "2329ce8ada3aa926c823df0526639b3081ebaf3a",
+      "commit": "d31f7aa9e5cf5a64d47ce7859ea1ed164854dc90",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-audacity",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-audacity/main/readme-vars.yml"
     },
     "azahar": {
-      "commit": "2cb6c6c1ff4441f2d82e15ac625e1e5c4afb9be0",
+      "commit": "a1c6a8af932bcfd3340696e908d19294312bcec3",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-azahar",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-azahar/master/readme-vars.yml"
     },
     "babybuddy": {
-      "commit": "0b2d42e50cd00f6263f2d1d9f04d1bc7eb88f03c",
+      "commit": "adab7a49346d44dc7c25536923e33cdc2004264f",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-babybuddy",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-babybuddy/main/readme-vars.yml"
     },
     "bambustudio": {
-      "commit": "43232e96c849d8a3d20ded61ceb0ec5f92a1e174",
+      "commit": "d8329013cbb18a70cd971fefa804c905609408f3",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-bambustudio",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-bambustudio/master/readme-vars.yml"
     },
     "bazarr": {
-      "commit": "43145f42bb8a645342cfcf013a6759800336ea50",
+      "commit": "cdf34c0888de51ab63cdc5c2594bb430f3a53019",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-bazarr",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-bazarr/master/readme-vars.yml"
     },
     "beets": {
-      "commit": "639c0abe8ae94cfd91bf4003a705645aad02ac86",
+      "commit": "33a4df57fa9302a78c9b2f712d85357738301f77",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-beets",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-beets/master/readme-vars.yml"
     },
     "bitcoin-knots": {
-      "commit": "cd94c180d527f83d2526e34842e929c65ad1814d",
+      "commit": "6b6ba379917c74e22df3b6000e90fa98c665c550",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-bitcoin-knots",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-bitcoin-knots/master/readme-vars.yml"
     },
     "blade-of-agony": {
-      "commit": "a6b54c61c43957d57f06eb56dd77539bea5641ab",
+      "commit": "3cd1649e8bf9d9c0f3b2c29abe5f167230831b78",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-blade-of-agony",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-blade-of-agony/master/readme-vars.yml"
     },
     "blender": {
-      "commit": "8a44d464a9e0af93f965da1abdd6cbb4cd33e528",
+      "commit": "af5ec279d19834e59f0b1e734b1d4a5f04525034",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-blender",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-blender/master/readme-vars.yml"
     },
     "boinc": {
-      "commit": "7b726c9c37d02bb55d210fa401007d4e368d1c0a",
+      "commit": "4e8330acc023beef0f1f5ec078625b2784c8a2c3",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-boinc",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-boinc/master/readme-vars.yml"
     },
     "bookstack": {
-      "commit": "6658332e6dfa0d82a0245d5042ebb2a2b7af9909",
+      "commit": "b0f765d039a4a5d0d2356951f987c6613521bd20",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-bookstack",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-bookstack/master/readme-vars.yml"
     },
     "brave": {
-      "commit": "51cca2f3ec67b8611666198f8ea5a57db346c1c3",
+      "commit": "459849a0fd722175deeab7cfdcaae38bfebf5999",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-brave",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-brave/master/readme-vars.yml"
     },
     "budge": {
-      "commit": "6dc66fab7df7b12c131a0f13781051f6c3980b94",
+      "commit": "a44b26aec686b12dad86b46a689d029c18f03354",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-budge",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-budge/main/readme-vars.yml"
     },
     "calibre-web": {
-      "commit": "dc73410dacb91a57a0989426e83a2ceb36fe4e6c",
+      "commit": "d7c40c7622f3e617486dafd3accf08227d7da0f7",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-calibre-web",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-calibre-web/master/readme-vars.yml"
     },
     "calligra": {
-      "commit": "62a8b8259b11f40f8a7cca6fffd9fce0edc0bdf4",
+      "commit": "f80cc5eb336bfa6941cfc0bd27e8234316ebe911",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-calligra",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-calligra/master/readme-vars.yml"
     },
     "changedetection.io": {
-      "commit": "f62e8a118c9599b2b15ff1bf7b28bf4076aaa0b0",
+      "commit": "d8d1ce9971ea78b0fbfd61edd7cf06030c9c2c8c",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-changedetection.io",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-changedetection.io/main/readme-vars.yml"
     },
     "chrome": {
-      "commit": "dac119c7a5a4575c40bbaf7bcb6d2130276db57b",
+      "commit": "9ebf61f9a70e0e9b1e0782021387aef91ba14eac",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-chrome",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-chrome/master/readme-vars.yml"
     },
     "chromium": {
-      "commit": "37d86691cbf19b861e6a3850d56e0dc6f8a01874",
+      "commit": "4ec00555069627093b9110daff841d363f9a95f8",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-chromium",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-chromium/master/readme-vars.yml"
     },
     "code-server": {
-      "commit": "9a70e1ba256241d8d70a5cbcbcad8dfe7db7833e",
+      "commit": "186efb0b6cf60f2c87a52929020ce57b372668ce",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-code-server",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-code-server/master/readme-vars.yml"
     },
     "cops": {
-      "commit": "8fca0013f315c40e05a4df0e4d0c06d277718a28",
+      "commit": "038383bac03247bc3c3bca1891ace96f7dab6646",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-cops",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-cops/master/readme-vars.yml"
     },
     "cura": {
-      "commit": "3af6226bbe6979a8a666651ce0dd0dec4ac2de26",
+      "commit": "b36bec251c816faf88b52ef3d8468a66c9e0b3b4",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-cura",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-cura/main/readme-vars.yml"
     },
     "darktable": {
-      "commit": "5032c1935ad2bb153f4dccd3471be0b3eb6c4afe",
+      "commit": "25ca728228f53e8b365416452e9214c69f669371",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-darktable",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-darktable/master/readme-vars.yml"
     },
     "davos": {
-      "commit": "417449f0627091795348596bae78c970a96cd423",
+      "commit": "e3505d0b4645d2161411cb610747382526f2b3c1",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-davos",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-davos/master/readme-vars.yml"
     },
     "deluge": {
-      "commit": "41feb82a5b3e7e222a6003a89b2c041e08e43c53",
+      "commit": "d773f9b548e5e096839525bddc62a549156f1dc5",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-deluge",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-deluge/master/readme-vars.yml"
     },
     "digikam": {
-      "commit": "60d389d3b9be6e6a49e1979f1e1e8d01e733a6f9",
+      "commit": "fd0663bebb867b7dba24c63d14e0493e7d94c0b9",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-digikam",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-digikam/master/readme-vars.yml"
     },
     "diskover": {
-      "commit": "6802d91edb828a2b206cce5a70cd412959e6a111",
+      "commit": "6ce4883083b09302d0a141530fe766718a856bd3",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-diskover",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-diskover/master/readme-vars.yml"
     },
     "dogwalk": {
-      "commit": "3d30c60dc89bed18affd61294f40e86227a0afef",
+      "commit": "533fdd97dd28af4d602fd63f177eea1c5ab25c2d",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-dogwalk",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-dogwalk/master/readme-vars.yml"
     },
     "dokuwiki": {
-      "commit": "f1577f81b084e8a1ff8289f8b88f4009432632d5",
+      "commit": "e60c049d1e1d54f240e80e4d27e91f6cd53f8f91",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-dokuwiki",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-dokuwiki/master/readme-vars.yml"
     },
     "dolphin": {
-      "commit": "84544d6551db425d5261fb2dab8166290c25826c",
+      "commit": "7a0f46b94fbc0a35b38b5a5353836e2e2003d36f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-dolphin",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-dolphin/master/readme-vars.yml"
     },
     "dosbox-staging": {
-      "commit": "ccc9ab2f3191c016369460df4b49948396376f81",
+      "commit": "6f527f4d68d4c9bba4d9b8ddc785e5a0ead85704",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-dosbox-staging",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-dosbox-staging/master/readme-vars.yml"
     },
     "doublecommander": {
-      "commit": "acffe6a899dad1e137693c4d75c65e86e0dadb9e",
+      "commit": "157e27c4efb9f48623c7783f1b6a5223bc4474a8",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-doublecommander",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-doublecommander/master/readme-vars.yml"
     },
     "duckstation": {
-      "commit": "c76d5be2ab19b2a0e0d1682162c511dfd4879651",
+      "commit": "e975f84f3b557210d12ab662e32240725fbe8b82",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-duckstation",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-duckstation/master/readme-vars.yml"
     },
     "duplicati": {
-      "commit": "b0a4c6827dc5e276b358d78ffe6f11307fcd0c45",
+      "commit": "ddf0492ae50c66daaa43172651f3fbfb5f950a98",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-duplicati",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-duplicati/master/readme-vars.yml"
     },
     "eden": {
-      "commit": "97d25c5401e5d51747c587686b302efe686c32cb",
+      "commit": "786bee6cd0e12828d534598839a065954279937f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-eden",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-eden/master/readme-vars.yml"
     },
     "emby": {
-      "commit": "2ce9e7512f253a20cb849b7b0059223c696765a9",
+      "commit": "1432c40d02f328ebf421b74474a48b400bb1cf30",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-emby",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-emby/master/readme-vars.yml"
     },
     "faster-whisper": {
-      "commit": "ecaded1b917f2c0251f75b8ed3d431ef39780ad5",
+      "commit": "62be4720a57067ef9e9d8b8d48736443ebeed995",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-faster-whisper",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-faster-whisper/main/readme-vars.yml"
     },
     "ferdium": {
-      "commit": "d0729c56928270d1c351dbada654eb856c45160e",
+      "commit": "37813cf7e8721c506be99023454f6df32e1f1107",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-ferdium",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-ferdium/master/readme-vars.yml"
     },
     "filezilla": {
-      "commit": "79fea6538c78c96be6234d50f0a230ec086b10f3",
+      "commit": "ad89ad1bdd0f2bad2d7dd8a68a3f989c3449949f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-filezilla",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-filezilla/master/readme-vars.yml"
     },
     "firefox": {
-      "commit": "df16f0297f35e2c5c07283e4fd9a2159e23f95a2",
+      "commit": "db125806503350eaf857db11ba4e1c584b81b1d1",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-firefox",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-firefox/master/readme-vars.yml"
     },
     "flexget": {
-      "commit": "1f3381ed480bea104d6abdeeaa2d05ee22df8784",
+      "commit": "63a92779fdcbda282e589d1ffee17c40e2a35281",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-flexget",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-flexget/main/readme-vars.yml"
     },
     "flycast": {
-      "commit": "31ab7c824e851fbfb5a21264eff7f41b50ccb605",
+      "commit": "f29f1b2a3780e8b9d79482a61cf8b591b878988c",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-flycast",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-flycast/master/readme-vars.yml"
     },
     "freecad": {
-      "commit": "747f51d0ef979fe4f43c85ff839e09a948228fdb",
+      "commit": "0e3fd1630fc06768086feb2f401a06cb142a9578",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-freecad",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-freecad/master/readme-vars.yml"
     },
     "freshrss": {
-      "commit": "1ab12908161d04229b6263430b533faefb5c1e4f",
+      "commit": "17e5d5c13abb07e5bab336ea3bc33cbade65f575",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-freshrss",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-freshrss/master/readme-vars.yml"
     },
     "gimp": {
-      "commit": "e6bb1b62a188149f6865037375fefc78f4b08e94",
+      "commit": "ea9d4b12cb4e2fbbc1de0ae461a6159dcf616e46",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-gimp",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-gimp/master/readme-vars.yml"
     },
     "gitqlient": {
-      "commit": "224f458f516bb818c555074c13f3d4c4c6aaed45",
+      "commit": "250e2e014246920bfb0a95b2c48719a6a6574a4a",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-gitqlient",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-gitqlient/master/readme-vars.yml"
     },
     "grav": {
-      "commit": "83f4f69136ddb02f7efb86f0ffbbc59469aefde3",
+      "commit": "91c96c344aaef767dbd33032f42995e4de96c562",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-grav",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-grav/main/readme-vars.yml"
     },
     "grocy": {
-      "commit": "0342689f29e409931ed410cf9cb172f0085eb8b4",
+      "commit": "2ee19f9b3858f0bf72286b0c661fdb946c3bfa7e",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-grocy",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-grocy/master/readme-vars.yml"
     },
     "gzdoom": {
-      "commit": "7a908ec0b2faeb524de9fe903915407f0878f474",
+      "commit": "e610eea3d3ee448c1319a45e636ccc67929601b9",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-gzdoom",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-gzdoom/master/readme-vars.yml"
     },
     "habridge": {
-      "commit": "e6eac399858c2e31bcfb2a9e9a9209869ed32016",
+      "commit": "5de811bf14b92c6507dbebdd1e1704e992ab53f6",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-habridge",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-habridge/master/readme-vars.yml"
     },
     "handbrake": {
-      "commit": "0798d1ef6d56952b8571d0773df9882940c32911",
+      "commit": "5e563f4568e1d42941342d7a982ebbae98108616",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-handbrake",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-handbrake/master/readme-vars.yml"
     },
     "healthchecks": {
-      "commit": "6315b6cd8f93e47ace3027073763b1d447e61b18",
+      "commit": "6ecb4c04c7bdeaa36bc92179c2f8e06c1d8fe6b9",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-healthchecks",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-healthchecks/master/readme-vars.yml"
     },
     "hedgedoc": {
-      "commit": "5269a8a82b879d94a9b1170f5cef5e504dfdc457",
+      "commit": "c664d721d2ea2cc2ef2693fefd7464f6a3f49f5c",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-hedgedoc",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-hedgedoc/main/readme-vars.yml"
     },
     "heimdall": {
-      "commit": "8a02a0cec470783bcb9313842b10685b11ff0b3f",
+      "commit": "c2e50254bb349399c88f7ad79188852ba780b5b1",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-heimdall",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-heimdall/master/readme-vars.yml"
     },
     "helium": {
-      "commit": "5abe891db3c4c9ef6bf0034ab3d342edad1c4d42",
+      "commit": "1ca936ab55075bcddb91f228321a9834b3219890",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-helium",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-helium/master/readme-vars.yml"
     },
     "hishtory-server": {
-      "commit": "9e43509e6891cbe4650e574550beaf7bb4ac8089",
+      "commit": "1d0a85b1225546d08c8669972404301784902bde",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-hishtory-server",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-hishtory-server/main/readme-vars.yml"
     },
     "htpcmanager": {
-      "commit": "e929fc2a138eb05d1a18ddba44998cf7a5783c33",
+      "commit": "78deebbe1b3f3d93f2342a1d65b85df4eeb4ce48",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-htpcmanager",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-htpcmanager/master/readme-vars.yml"
     },
     "inkscape": {
-      "commit": "3630220cf54c137ca25df27158c2497b223930c7",
+      "commit": "68c3d3ed7402722ec5a8490df2361704bceb947a",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-inkscape",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-inkscape/master/readme-vars.yml"
     },
     "intellij-idea": {
-      "commit": "864204016efcf29d0fab1e61ae5d21c5359e65f7",
+      "commit": "af63a85682b4d49d6a4be701fa4fc2dda4e22b19",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-intellij-idea",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-intellij-idea/master/readme-vars.yml"
     },
     "jackett": {
-      "commit": "8ba36326210d7faa9b5a8b93f47dcf9fc4f57396",
+      "commit": "2627fdfa3154588a10991a17b3142d8ebb566f88",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-jackett",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-jackett/master/readme-vars.yml"
     },
     "jellyfin": {
-      "commit": "194eca169d5aec6fe5cb710b9af1384d385a9df0",
+      "commit": "8b6008d5e6f268e1c62b71d95984903c2cfecb38",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-jellyfin",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-jellyfin/master/readme-vars.yml"
     },
     "joplin": {
-      "commit": "b2d08dc200a7de928b8b4ece3388ba393f281d84",
+      "commit": "33a57bb5ae9ad631ad0e1c1e737a08595a51e9dd",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-joplin",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-joplin/master/readme-vars.yml"
     },
     "kali-linux": {
-      "commit": "989e5f7886dddba7d7274ab722b57b594cc91301",
+      "commit": "fcec106149b9358625368b6b3249a11631bae135",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-kali-linux",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-kali-linux/master/readme-vars.yml"
     },
     "kavita": {
-      "commit": "93dc68d1ff09cc08ee608f921388b507d1a20bc2",
+      "commit": "d5ac2585dfafaf98735936fc522616744926ec63",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-kavita",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-kavita/main/readme-vars.yml"
     },
     "kdenlive": {
-      "commit": "a19a9aae817f6ac1b02ede35ce35c8a7e8e0d594",
+      "commit": "ac58c301143b976ebc7f1cd955648e516532f850",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-kdenlive",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-kdenlive/master/readme-vars.yml"
     },
     "keepassxc": {
-      "commit": "858642b3d3cfeedfae74ed333881fa4dd5ce7aa5",
+      "commit": "a21b2f84dfb4f81c69ea4e6db427f5c103c62c0e",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-keepassxc",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-keepassxc/master/readme-vars.yml"
     },
     "kicad": {
-      "commit": "2eed5b690fd7637fd37290a9f2cf335b566da9c8",
+      "commit": "0a1e59ce48372f85cedd36db7b792e2b37d3ab37",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-kicad",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-kicad/master/readme-vars.yml"
     },
     "kimai": {
-      "commit": "68ff692a53ce7a0c3105f86b2903cd6924b737e6",
+      "commit": "61d3ddaa81d8ae8e1cc77b4ab82a2090d192086d",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-kimai",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-kimai/main/readme-vars.yml"
     },
     "krita": {
-      "commit": "854c95172febad9706e65a70d4502f889414d40b",
+      "commit": "03a926c6446add56eaf455aac704007a858a8c69",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-krita",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-krita/master/readme-vars.yml"
     },
     "lazylibrarian": {
-      "commit": "5ed862f59f5120ba087cdc8505a83f81680ca6a2",
+      "commit": "3329894b082724736e3d7d042f05c4ddac61ed90",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-lazylibrarian",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-lazylibrarian/master/readme-vars.yml"
     },
     "libreoffice": {
-      "commit": "111677875a7d39967367fd71a5ea5809abfe39e6",
+      "commit": "ea2aef0daa6b9e39f362aa716f6dd3577dfcd720",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-libreoffice",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-libreoffice/master/readme-vars.yml"
     },
     "librespeed": {
-      "commit": "b08accb085f76b952f8532e993d95af27bc5ad52",
+      "commit": "1436c77888ac0f425de40ab53d0bf8b73bb4ab4b",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-librespeed",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-librespeed/master/readme-vars.yml"
     },
     "librewolf": {
-      "commit": "1d1d84ac63e4dd2b61617f5439446bbb3be5c61f",
+      "commit": "d1c7412f0950f3567fe0ac4b3c2f8f5e4bf895bc",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-librewolf",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-librewolf/master/readme-vars.yml"
     },
     "lidarr": {
-      "commit": "d53cf16647f0d693963731197c20a0837d7f2772",
+      "commit": "5beec754da94f2b6f7b38e94c1b67c16f91fec9f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-lidarr",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-lidarr/master/readme-vars.yml"
     },
     "limnoria": {
-      "commit": "e6e8dfb22107b32ba6a238010174bb4d3e3ae73e",
+      "commit": "bc9f7d0ea21be04e39307cb940120079ca63c853",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-limnoria",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-limnoria/master/readme-vars.yml"
     },
     "lm-studio": {
-      "commit": "6a43b618969506973274a1f6b43d21b54bf7c4ec",
+      "commit": "a6a33a7b0ac48cce28b109b300d3b3643eb1ad08",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-lm-studio",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-lm-studio/master/readme-vars.yml"
     },
     "lollypop": {
-      "commit": "1b9ee936c43224c690b05517b790cd0312b1c89d",
+      "commit": "72b45d9d816426ce6aa6791d1ee81e9d7524ac41",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-lollypop",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-lollypop/master/readme-vars.yml"
     },
     "lychee": {
-      "commit": "3f3f1614002d5f891de29191f23ad2b9f96e2652",
+      "commit": "db6bbd61f7bd5b0370487d577a75443448c2ad81",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-lychee",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-lychee/master/readme-vars.yml"
     },
     "mame": {
-      "commit": "cc756768e9683198ea7fcca7dda3c038647d8e17",
+      "commit": "a5fb51ebd29fad8e1340f0c13db8aa7ffd2fece1",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-mame",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-mame/master/readme-vars.yml"
     },
     "manyfold": {
-      "commit": "ac3968fb8addb8ba097ec20d2606abdcbcdf4c5e",
+      "commit": "16daafee8b80a9478f047bf1419dbb83f9e48729",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-manyfold",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-manyfold/main/readme-vars.yml"
     },
     "mariadb": {
-      "commit": "0c29ee565913170d71d00e888cafe3c330ea7c1a",
+      "commit": "0ab6be9cb4a4eff9e783d1a15071fd63f9eae4ba",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-mariadb",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-mariadb/master/readme-vars.yml"
     },
     "mastodon": {
-      "commit": "8ac26b3f6e611d7eb60d5bb6c12f56fe4a6f57ae",
+      "commit": "5bc882ca06b9cb4743682c057ff2a1999de975d0",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-mastodon",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-mastodon/main/readme-vars.yml"
     },
     "mediaelch": {
-      "commit": "ce1f376ace56eab0d99f41db611936a82836188c",
+      "commit": "a5efc5c9d2cfc0d51e3fe1aabcf4261ba55c8ed2",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-mediaelch",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-mediaelch/master/readme-vars.yml"
     },
     "medusa": {
-      "commit": "09f2b02beb5cae3f9f6e8da69e7e52ea941c2ad1",
+      "commit": "6c6c19d161e6d73b6619951311196e91f944c610",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-medusa",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-medusa/master/readme-vars.yml"
     },
     "melonds": {
-      "commit": "7d499698428a8e08e686de139d02f45f6168b958",
+      "commit": "ca4d4ca79a23f61f07931b3eda7844a61ac92239",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-melonds",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-melonds/master/readme-vars.yml"
     },
     "modrinth": {
-      "commit": "d8db48ff5de3b7d5d7b94d78cd526c3654568da7",
+      "commit": "5d5956123230cf2e24149e949dd1f9b6858a9a0e",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-modrinth",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-modrinth/master/readme-vars.yml"
     },
     "msedge": {
-      "commit": "bc1498e56bd6219329937013a281ad4a686a29a9",
+      "commit": "f4e5e40ae9d181053ad1ed84d0f7c6a48b6fe1d6",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-msedge",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-msedge/master/readme-vars.yml"
     },
     "mstream": {
-      "commit": "3389be80447192125cc431ad14faa41b0baccff5",
+      "commit": "05224c96609aec795c2f08e59f2d451e91e58f8c",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-mstream",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-mstream/master/readme-vars.yml"
     },
     "mylar3": {
-      "commit": "8705bb58f8126d248a1fcbeb54a36f719f766d21",
+      "commit": "6a379cc6ac9f0a01af8b21525450b72b08640614",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-mylar3",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-mylar3/master/readme-vars.yml"
     },
     "netbox": {
-      "commit": "1612d0b57bee0c11e7df8b784bffd87b98b48bce",
+      "commit": "e4343f5736d1258f474fcbc9ae99fff1b676d710",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-netbox",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-netbox/master/readme-vars.yml"
     },
     "nextcloud": {
-      "commit": "75678899626941b392b75cee3fe46ee3e61333de",
+      "commit": "d891e71fba08485213642f54ba83ba5b4ae1da58",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-nextcloud",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-nextcloud/master/readme-vars.yml"
     },
     "nginx": {
-      "commit": "9d17e409d328932399cbc10a1d5eb4d70d2e035a",
+      "commit": "9aeecc20eb4c0e494ef63a7173dc2f858727dc42",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-nginx",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-nginx/master/readme-vars.yml"
     },
     "ngircd": {
-      "commit": "aa2feb02afbb86cd66155664d8a30559e4f9fb24",
+      "commit": "5283b0c098da0e7f25161d16c93a99f3b47ef16c",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-ngircd",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-ngircd/master/readme-vars.yml"
     },
     "nzbget": {
-      "commit": "b376672e5d58d4bdad918a08707e6d738591eba3",
+      "commit": "5ca25bea9a2f50dcbf76e0dc899b86f972dd2e36",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-nzbget",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-nzbget/master/readme-vars.yml"
     },
     "nzbhydra2": {
-      "commit": "c432a60ab3580da0f33f2a9de6b6462ca43332f5",
+      "commit": "fbe5bae3618e57af8f0d04783ff5dad86b05a567",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-nzbhydra2",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-nzbhydra2/master/readme-vars.yml"
     },
     "obsidian": {
-      "commit": "2a90c20496d6705618148c3e4d09cebef47fd37a",
+      "commit": "ab5b0e628babc95f973ce0af595803569bf50f34",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-obsidian",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-obsidian/main/readme-vars.yml"
     },
     "ombi": {
-      "commit": "965e6a88e13a7d8090582f696fbf539d8b5c4aaa",
+      "commit": "bd9ad5175ac421ce6e06c9b2c26bafa0c9de2c71",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-ombi",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-ombi/master/readme-vars.yml"
     },
     "onlyoffice": {
-      "commit": "31358438f5eaea5af15380219cddbf4681c42449",
+      "commit": "475bbfee2aac26e686caa22940f3f121a3e39768",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-onlyoffice",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-onlyoffice/master/readme-vars.yml"
     },
     "openshot": {
-      "commit": "0d603deb61889975b81995b8463edf9e70e786d3",
+      "commit": "8c66d5ed1ecb80f8af2e58f26ce62b02ffeceb4c",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-openshot",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-openshot/main/readme-vars.yml"
     },
     "openssh-server": {
-      "commit": "2caae2ea5b99fcc5359e1c6eb334d83cb3fdfcc9",
+      "commit": "89e9904a717a95cb8be5f2bbe22a2a1a4c76ff3c",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-openssh-server",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-openssh-server/master/readme-vars.yml"
     },
     "opera": {
-      "commit": "a54fba14a003d563d2b959f4822f9b6766e5bf67",
+      "commit": "c9b5a0f08cd32e191ab0e5ed6a5ee6bfc8e6cd63",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-opera",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-opera/master/readme-vars.yml"
     },
     "orcaslicer": {
-      "commit": "83912afe48d4363eba5217484f7374c72071ac8c",
+      "commit": "e4de9c10656bfa990cdca9222d30dcb6ee6b1fd2",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-orcaslicer",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-orcaslicer/master/readme-vars.yml"
     },
     "pairdrop": {
-      "commit": "bf7f7afde8ff00acff719ff1ed9488b11992f4fd",
+      "commit": "9a16b12f558668230bcf14d2d12b3f522a2cbfc9",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-pairdrop",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-pairdrop/main/readme-vars.yml"
     },
     "pcsx2": {
-      "commit": "d328015357ea61c38b12d81b6e8942d52324774b",
+      "commit": "9611f8fdf45074fa39548f25ad26775d0eace449",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-pcsx2",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-pcsx2/master/readme-vars.yml"
     },
     "phpmyadmin": {
-      "commit": "1958c7ba6690a23dc6de2cda76cb2cae1680961a",
+      "commit": "55b4b3c8e7af94e52a42ac876ef6a2628143a0a9",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-phpmyadmin",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-phpmyadmin/main/readme-vars.yml"
     },
     "pidgin": {
-      "commit": "837ab3cdf3ffe9536b79f6f6aa2822f6357e6423",
+      "commit": "2758b8d04cd0695131427e5fc10605ee748234f2",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-pidgin",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-pidgin/master/readme-vars.yml"
     },
     "piper": {
-      "commit": "78ad0a3e095af4fa9018945dc2116d7d028bbca3",
+      "commit": "35332cc925d17b30388ffa81a43faacbec24f6d1",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-piper",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-piper/main/readme-vars.yml"
     },
     "piwigo": {
-      "commit": "ed99e86524ab3c69dd5f89f149c61fb7b64c1e52",
+      "commit": "4a12033d08b658c8d23abe8c09ce6abce7773464",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-piwigo",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-piwigo/master/readme-vars.yml"
     },
     "planka": {
-      "commit": "aa7cf42555f08822e13c727344b8906f80490183",
+      "commit": "b5db78ea845b9484070ef0950aac2210ffb99baf",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-planka",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-planka/main/readme-vars.yml"
     },
     "ppsspp": {
-      "commit": "e842264c8a6d8acd6bb2302acad64938e1022d4d",
+      "commit": "20b73fbfbda717943faa0fc226a52e59cfb3da99",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-ppsspp",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-ppsspp/master/readme-vars.yml"
     },
     "projectsend": {
-      "commit": "e70aae5cddcd2b78ba3c54255e9b6c11007405a6",
+      "commit": "3a0201c6daba55ac7d83eefc551ccb5b3f880302",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-projectsend",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-projectsend/master/readme-vars.yml"
     },
     "prowlarr": {
-      "commit": "102b5f45ff3e759c22a625aafaeae43bef750d41",
+      "commit": "374c050845658948dee01cf9cecbbd35638426b9",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-prowlarr",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-prowlarr/main/readme-vars.yml"
     },
     "pwndrop": {
-      "commit": "114f237510f1d064608688788a183890bd06994a",
+      "commit": "d9dbdd4dfe7d5698eb5cec9c3576939f2429471b",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-pwndrop",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-pwndrop/master/readme-vars.yml"
     },
     "pycharm": {
-      "commit": "078a7c1bc93b3722f0ec3e9f75f0955fea6e5d9b",
+      "commit": "1c6cf1e86fa2d99fffa828450db17c98affd243c",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-pycharm",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-pycharm/master/readme-vars.yml"
     },
     "pydio-cells": {
-      "commit": "78cc39f8848e1812a480b3313268e6bc89220d7a",
+      "commit": "48e9761125aa7d48d5de713338bc047fab1a8a59",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-pydio-cells",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-pydio-cells/master/readme-vars.yml"
     },
     "pyload-ng": {
-      "commit": "03d0a86c991ee5217cfbe4d07022b5bb446aa85e",
+      "commit": "e5ab4d0b382d7e1cc42254d3b67165b7f06fd0eb",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-pyload-ng",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-pyload-ng/main/readme-vars.yml"
     },
     "qbittorrent": {
-      "commit": "a8dcabe47f9c8d598d92576caa13692613bd5a5a",
+      "commit": "1dde54c9d4f2483432e64f1a4bfc2b0b09e2d116",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-qbittorrent",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-qbittorrent/master/readme-vars.yml"
     },
     "qdirstat": {
-      "commit": "7fa0e501d3a0c83a7b819c09aca6f6423dd87f4b",
+      "commit": "e7a96a192d37172395490270c5b320f189846d70",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-qdirstat",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-qdirstat/master/readme-vars.yml"
     },
     "radarr": {
-      "commit": "3bbffd133390b7bc69dd9b6df47049208cc43779",
+      "commit": "b3d80a93c2e8d8163e1527c42097399283f1475e",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-radarr",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-radarr/master/readme-vars.yml"
     },
     "raneto": {
-      "commit": "8397de081f7907577f10f3ddcb861f80d8c690f5",
+      "commit": "459c87d2dff2462b3d26f0e15d55fce58e626bb2",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-raneto",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-raneto/master/readme-vars.yml"
     },
     "rawtherapee": {
-      "commit": "5443c4c03834472060435d49bc4a448c78edc674",
+      "commit": "1b4e1bf070e1eef11e125d074141539084d83151",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-rawtherapee",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-rawtherapee/main/readme-vars.yml"
     },
     "remmina": {
-      "commit": "0d2cfd9dd1e6a40c43bd41ea305f2b369bbf97d8",
+      "commit": "b3a85b122478ca11d1072976fef176d433abc70e",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-remmina",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-remmina/master/readme-vars.yml"
     },
     "resilio-sync": {
-      "commit": "dc6ede1f716baf61166922ae596e0aa9038ec16e",
+      "commit": "dd76d2b0acc6585c8a7906da331ae9beed85ae4c",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-resilio-sync",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-resilio-sync/master/readme-vars.yml"
     },
     "retroarch": {
-      "commit": "7d13f2c55e0442cdfb822942a04946386ec22336",
+      "commit": "c89ef38d130a2ec6f303919e6b0ecc7680725e7f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-retroarch",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-retroarch/master/readme-vars.yml"
     },
     "rpcs3": {
-      "commit": "a696ac35c80603fcb85d1f2083456f243a7438b3",
+      "commit": "5175a0b87e6b0fb25e5611e6631e417742d0d384",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-rpcs3",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-rpcs3/master/readme-vars.yml"
     },
     "rustdesk": {
-      "commit": "4ad88fd4844f1f1f95ca65cd2469e61185d6fd86",
+      "commit": "e8a96b75cfb486d959d9936b13ff0d7c1d0691cb",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-rustdesk",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-rustdesk/master/readme-vars.yml"
     },
     "sabnzbd": {
-      "commit": "d3e9d376b9face8a2455fee964db8e74d3d69a13",
+      "commit": "702c49237c793f1bbe9fde0555fb912823ca4574",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-sabnzbd",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-sabnzbd/master/readme-vars.yml"
     },
     "scummvm": {
-      "commit": "6f160c8fdbd858bdc2ff848dc8e35dac58f4203c",
+      "commit": "c06bc31072fdf38c56557a190239b16500dc9438",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-scummvm",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-scummvm/master/readme-vars.yml"
     },
     "sealskin": {
-      "commit": "bd2f97138383e02c7d8d47819fa061b48158a4b0",
+      "commit": "607341d0ca941fc4f832eb6218efffc84116b0a4",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-sealskin",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-sealskin/master/readme-vars.yml"
     },
     "shadps4": {
-      "commit": "8907e777932c31afac14391c7becb25f9d408310",
+      "commit": "aebf116aed07c06ed5a37ee67d5a5d2a7fb7d9eb",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-shadps4",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-shadps4/master/readme-vars.yml"
     },
     "shotcut": {
-      "commit": "46733a4ced7d6e5f8849956f2a787cb594b9822b",
+      "commit": "9324e97e72155b988a471143fed017287dc0c0b6",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-shotcut",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-shotcut/main/readme-vars.yml"
     },
     "sickgear": {
-      "commit": "aa703de9d619dfe493e3a03af8716568ac31ff92",
+      "commit": "cccd302558153c8e2b8ee2afe8d2cd5d0044b41f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-sickgear",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-sickgear/master/readme-vars.yml"
     },
     "signal": {
-      "commit": "7d31bcd89632031f1e71d957dae80733e53ce0a8",
+      "commit": "e79ae53e490c3c138ed169f9796bb16a03b16c3f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-signal",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-signal/master/readme-vars.yml"
     },
     "smokeping": {
-      "commit": "9bd349aa2044e882fd4ea9482d3a694e32af096a",
+      "commit": "e0e33d778603feb55e60e824661e8c5f850e57ce",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-smokeping",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-smokeping/master/readme-vars.yml"
     },
     "sonarr": {
-      "commit": "5283fcba39c6cd7593fae6ad43b2a34356c864f9",
+      "commit": "46754398243e61fd3c8a83fe51625dfdc3f8da41",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-sonarr",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-sonarr/master/readme-vars.yml"
     },
     "speedtest-tracker": {
-      "commit": "a17e9536f853ebc8873f7b90830104af587223f5",
+      "commit": "948e7e5c34b2a03a54f7cd90f9563628deb7a386",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-speedtest-tracker",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-speedtest-tracker/main/readme-vars.yml"
     },
     "spotube": {
-      "commit": "0075f5c95b344f26f1c80fa71ba2601d42548a33",
+      "commit": "ac9c3e9be4e3fcd4570284fd3b02a1c0bc02e344",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-spotube",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-spotube/master/readme-vars.yml"
     },
     "sqlitebrowser": {
-      "commit": "baf5c89c1b66971c7056e147eeb63b645dc2dac7",
+      "commit": "9c4cbe2c5d84a0e86262d8b421e31f2b2a09c477",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-sqlitebrowser",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-sqlitebrowser/master/readme-vars.yml"
     },
+    "steam": {
+      "commit": "d585b6d6ca95ced3fd7cc5e9c585833bc6a7c820",
+      "ref": "master",
+      "source_file": "readme-vars.yml",
+      "source_repo": "https://github.com/linuxserver/docker-steam",
+      "source_url": "https://raw.githubusercontent.com/linuxserver/docker-steam/master/readme-vars.yml"
+    },
     "synclounge": {
-      "commit": "6056271635f2f24f1b6202c2f2e87da1965fc207",
+      "commit": "8e05bd1fb5e164c94f61a68aad639c7784d6b05b",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-synclounge",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-synclounge/master/readme-vars.yml"
     },
     "syncthing": {
-      "commit": "fe4110890bcecacb1f697101ba742a7ae5fd90a9",
+      "commit": "3efaf77c7fb170facdc229e8f5840358cc3bed74",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-syncthing",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-syncthing/master/readme-vars.yml"
     },
     "tautulli": {
-      "commit": "1c6f763fd9863e0c22900ad8a23f32efc669a0b1",
+      "commit": "f07018e33e55db6c4c02be3575fc66878ad4843f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-tautulli",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-tautulli/master/readme-vars.yml"
     },
     "telegram": {
-      "commit": "9aea726082231318da0bde86b1a560ef7fbc2fef",
+      "commit": "6f41a78338888e3b14d3d0844554a0d47f29e111",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-telegram",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-telegram/master/readme-vars.yml"
     },
     "thelounge": {
-      "commit": "3123069c021c76d1f286fed653ec0f19aebf59d3",
+      "commit": "a10b9a72570980dc07178b9b4ea4e91e94a06441",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-thelounge",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-thelounge/master/readme-vars.yml"
     },
     "thunderbird": {
-      "commit": "c3f49470bec088fda3be43e78cda917cb799d36f",
+      "commit": "7c348d50ecb16782381570d9239f8ed08a8ad67f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-thunderbird",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-thunderbird/master/readme-vars.yml"
     },
     "transmission": {
-      "commit": "b2ed33c8b2051ec079511391afaf98221c2e1c15",
+      "commit": "6b9f2cf001b87dcd51c362bb52620dba33c13cfa",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-transmission",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-transmission/master/readme-vars.yml"
     },
     "tvheadend": {
-      "commit": "8f156fb2d82a211e99ef0f3fcae49dbec670ea65",
+      "commit": "6f63fe9ade23ab0ee5b6b1fd85c3be19c5d4ea7f",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-tvheadend",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-tvheadend/master/readme-vars.yml"
     },
     "ungoogled-chromium": {
-      "commit": "05ff295a94f2209a113f165d5a6d6d360f60f13d",
+      "commit": "2630f1976f407b9c0082a2fdb35920e878112d06",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-ungoogled-chromium",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-ungoogled-chromium/master/readme-vars.yml"
     },
     "unifi-network-application": {
-      "commit": "f9ed9d2db13c2638d385af7ca7e7fea3545c64af",
+      "commit": "0b84a106f700aa20a2b530b2c5aa125c6147259b",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-unifi-network-application",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-unifi-network-application/main/readme-vars.yml"
     },
     "vivaldi": {
-      "commit": "5ebc0fdfff157316405d58b1f962e5a71ebcd441",
+      "commit": "ff2af1d006a11c846c574931941582a5125b8fdb",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-vivaldi",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-vivaldi/master/readme-vars.yml"
     },
     "vlc": {
-      "commit": "e344bb17cc86f3b13517ebd2f81546ec29f8140a",
+      "commit": "709112cc806054477e92160f9a0018dc7d557afd",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-vlc",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-vlc/master/readme-vars.yml"
     },
     "vscodium-web": {
-      "commit": "364781f7b9ad47707f13cdaefcc564e3d1949612",
+      "commit": "f56eca8f180c3abb111892752edd9377010a00fc",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-vscodium-web",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-vscodium-web/main/readme-vars.yml"
     },
     "webcord": {
-      "commit": "87323aa07ddfee2ab39fefa646ef296d09c2c0d0",
+      "commit": "ff13634702f6d5e262f03b8991ed87f9584695df",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-webcord",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-webcord/master/readme-vars.yml"
     },
     "webstation": {
-      "commit": "7047981bfaaede3e9fdb6fdf0c4adfe6ad2f232b",
+      "commit": "8b7fbcaad7f247ea72183a45a8933fe1294b807c",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-webstation",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-webstation/master/readme-vars.yml"
     },
     "webtop": {
-      "commit": "f4211d28f085a8a1c9ee4c77ad747ee54ac2ff7c",
+      "commit": "2157524e3e50f5abe408d9eb0c430327dcde7aed",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-webtop",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-webtop/master/readme-vars.yml"
     },
     "weixin": {
-      "commit": "67be3d28d6f7e1dc9b29a930c78f67a298727506",
+      "commit": "30689e8227e4ac1c0eec478cb5d5e2457a57246e",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-weixin",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-weixin/master/readme-vars.yml"
     },
     "wikijs": {
-      "commit": "1120cf0cba00aceec584c1ba573a10102b183123",
+      "commit": "54aef8f924b5d151f95652079006957e416eb1b6",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-wikijs",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-wikijs/master/readme-vars.yml"
     },
     "winegui": {
-      "commit": "b3042bb3ec362ebb33971b992ec282889038def2",
+      "commit": "8bc3d247e45e7cea74a1ee7c7a1e01024df0a239",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-winegui",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-winegui/master/readme-vars.yml"
     },
     "wps-office": {
-      "commit": "cd21e03eb78ca0a649e32e2097aa20bb2dbf5b35",
+      "commit": "7e249a61576a31dbe9d0af5d41dea65dd6982056",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-wps-office",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-wps-office/master/readme-vars.yml"
     },
     "xbackbone": {
-      "commit": "882ffdf89c51ded6ba2e54050bcbf34f0bd8cdad",
+      "commit": "203e37860e24538886390bc56706f75de21042a5",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-xbackbone",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-xbackbone/main/readme-vars.yml"
     },
     "xemu": {
-      "commit": "ee39f14aedafc6192c8f97d035796a19435c62b8",
+      "commit": "ea25bf04dc7cfcf17b11bf46ec8e5c81b449bf45",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-xemu",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-xemu/master/readme-vars.yml"
     },
     "yaak": {
-      "commit": "0a83a5362d605f07fea70347ce3445d46a11c930",
+      "commit": "e136743444b0613cd1401b67c12df4642f73c9ca",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-yaak",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-yaak/main/readme-vars.yml"
     },
     "your_spotify": {
-      "commit": "1128417ab74dc2dd741561510687697459ee2212",
+      "commit": "08e056da0b94dbe5382afd795c2498152707e0d7",
       "ref": "main",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-your_spotify",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-your_spotify/main/readme-vars.yml"
     },
     "zen": {
-      "commit": "9b9fa8cf7f5af86fd0ef7edcd0f65988f8ad9a67",
+      "commit": "b58c4b380482aba390e85ca7bfeb35596fc33557",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-zen",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-zen/master/readme-vars.yml"
     },
     "znc": {
-      "commit": "9590f8e402a6889b2ee2d7a407ae06d2ca43041c",
+      "commit": "aa01fcc6f6ba024dab85dd64aa16a9ebe425a64b",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-znc",
       "source_url": "https://raw.githubusercontent.com/linuxserver/docker-znc/master/readme-vars.yml"
     },
     "zotero": {
-      "commit": "ab202c628ef748d753a7a88304e568668e64f202",
+      "commit": "975272459fa58ec7abd4f0716a5af6e1300c0183",
       "ref": "master",
       "source_file": "readme-vars.yml",
       "source_repo": "https://github.com/linuxserver/docker-zotero",
